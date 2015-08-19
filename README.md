@@ -1,2 +1,2 @@
 # socketQueue
-ISO 8583 gateway for payment systems communication
+ISO 8583 gateway for bank payment systems communication
