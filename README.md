@@ -19,7 +19,7 @@ SocketQueue acts as a gateway between bank ISO 8583 system and web applications 
 * Transactions queue
 * Auto-reversal implementation
 * TID queueing (wait for busy TID)
-* SocketBank (virtual SW test host)
+* SocketBank (virtual SV test host)
 * Test clients (self test mode)
 * Stats server
 * SmartVista weird transactions mishandling handling
