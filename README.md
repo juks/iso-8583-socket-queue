@@ -38,7 +38,7 @@ SocketQueue acts as a gateway between bank ISO 8583 system and web applications 
 ## Basic Usage
 To get the list of all command line and configuration file parameters available, run SocketQueue with _--help_ option:
 
-    _nodejs socketQueue.js --help
+    nodejs socketQueue.js --help
 
 To establish the gateway to remote ISO host on 10.0.0.1:5000, that accepts both binary and HTTP connections, run the module with the following parameters:  
 
