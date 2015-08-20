@@ -1,8 +1,8 @@
 # SocketQueue
-ISO 8583 gateway for bank POS systems communication
+ISO-8583 gateway Node.js implementation for bank POS systems communication
 
 ## The Idea
-SocketQueue acts as a gateway between bank ISO 8583 system and web applications that want to communicate with them. It keeps one "host to host" connection with the bank that is used to pass data sent by many connections of the local clients.
+SocketQueue acts as a gateway between bank ISO-8583 system and web applications that want to communicate with them. It keeps one "host to host" connection with the bank that is used to pass data sent by many connections of the local clients.
 
                                   +-------------+
                                   |             | <-------> POS HTTP client
@@ -13,8 +13,8 @@ SocketQueue acts as a gateway between bank ISO 8583 system and web applications 
 ## Features
 * Connection manager
 * Host-to-Host on the left hand (one permanent TCP connection for everything), Host‑to‑POS (many TCP connections) on the right
-* Supports both binary ISO8583 and JSON over HTTP operation modes at the same time
-* ISO8583 validation, ISO8583 values padding
+* Supports both binary ISO-8583 and JSON over HTTP operation modes at the same time
+* ISO8583 validation, ISO-8583 values padding
 * Safe data/events logger (console, files, LogStash)
 * Transactions queue
 * Auto-reversal implementation
@@ -42,7 +42,7 @@ To get familiar with all the command line and configuration file parameters avai
 
     node socketQueue.js --help
 
-To establish the gateway to remote ISO host on 10.0.0.1:5000, that accepts binary ISO 8583 messages, run the module as following:  
+To establish the gateway to remote ISO host on 10.0.0.1:5000, that accepts binary ISO-8583 messages, run the module as following:  
 
     node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014
     
@@ -69,13 +69,13 @@ Where config.json contains:
     "logFile":         "log.txt"
 }
 ```
-## Binary ISO 8583 service
-SocketQueue provides the service for the POS transactions, sent as ISO 8583 messages. Each valid ISo 8583 message, sent by client is sent to ISO host. Each ISO host response is sent back to the client as ISO 8583 message. To run ISO 8583 gateway on certain port, use the _--listenPort_ parameter.
+## Binary ISO-8583 service
+SocketQueue provides the service for the POS transactions, sent as ISO-8583 messages. Each valid ISO-8583 message, sent by client is sent to ISO host. Each ISO host response is sent back to the client as ISO 8583-message. To run ISO 8583 gateway on certain port, use the _--listenPort_ parameter.
 
 Each message consists of three parts: the MTI (Message Type Indicator), Binary Mask (lists the fields, being sent) and the fields values. You may find more detailed sytax description on Wiki page https://en.wikipedia.org/wiki/ISO_8583
 
 ## HTTP JSON Service
-SocketQueue understands the ISO 8583 transactions, sent as JSON arrays. Each valid message is converted to ISO 8583 string, values are padded where necessary. The message then goes to ISO host. The ISO host responses are converted back to JSON arrays and sent back to clients.
+SocketQueue understands the ISO-8583 transactions, sent as JSON arrays. Each valid message is converted to ISO-8583 string, values are padded where necessary. The message then goes to ISO host. The ISO host responses are converted back to JSON arrays and sent back to clients.
 
 To run the HTTP server use _--listenHttpPort_ option with the port number to listen on.
 
@@ -132,7 +132,7 @@ Or you can run only the echo server with so called "Socket Bank" onboard:
     node socketQueue.js --vv --echoServerPort=5000
 
 ## Collecting the Statistics
-The option _--statServerPort_ enables the statistics module and starts the stat server on given port number, that collects the following statistics of while SocketQueue accepts ISO 8583 transactions:
+The option _--statServerPort_ enables the statistics module and starts the stat server on given port number, that collects the following statistics of while SocketQueue accepts ISO-8583 transactions:
 
 Parameter | Meaning 
 --- | ---
