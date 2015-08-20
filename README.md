@@ -2,7 +2,7 @@
 ISO-8583 gateway Node.js implementation for bank POS systems communication
 
 ## The Idea
-SocketQueue acts as a gateway between bank ISO-8583 system and web applications that want to communicate with them. It keeps one "host-to-host" connection with the bank that is used to pass data sent by many connections of the local clients. It terms of POS processing systems "host-to-host" connection means that all the data is sent and received via single full-duplex socket asynchronously. The recieved data is assigned to appropriate sender using the TID (Terminal Id) and STAN (System Trace Audit Number). 
+SocketQueue acts as a gateway between bank ISO-8583 system and web applications that want to communicate with them. It keeps one "host-to-host" connection with the bank processing to pass data, sent by multiple local clients. In terms of POS processing systems "host-to-host" connection means all the data is sent and received via single full-duplex socket asynchronously. The recieved data is assigned to appropriate sender using the TID (Terminal Id) and STAN (System Trace Audit Number). If there is two packets one after another with the same TID, the second packet will be queued until the first one is processed or timed out.
 
                                   +-------------+
                                   |             | <-------> POS HTTP client
