@@ -33,7 +33,7 @@ SocketQueue acts as a gateway between bank ISO 8583 system and web applications 
     _cd SocketQueue_  
     _npm install_
 
-## Basic usage
+## Basic Usage
 To get the list of all command line and configuration file parameters available, run SocketQueue with _--help_ option:
 
     _nodejs socketQueue.js --help
@@ -67,7 +67,7 @@ Where config.json contains:
 }
 ```
 
-## ISO host emulation
+## ISO Host Emulation
 Using _--echoServerPort_ parameter, you can run the local ISO host emulator that supports basic operations like 800 (echo), 200 (purchase) and 400 (reversal). To emulate the real client connections/requests process you can add the _--testClients_ option. Do not forget to supply it with _--testTargetHost_ and _--testTargetPort_.
 
 The following example shows two separate instances of SocketQueue running, but you can also comine all parameters in one.
