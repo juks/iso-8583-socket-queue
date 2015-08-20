@@ -129,12 +129,14 @@ Or you can run only the echo server with so called "Socket Bank" onboard:
 ## Gathering the Statistics
 The option _--statServerPort_ enables the statistics module and starts the stat server on given port number, that collects the following statistics of while SocketQueue accepts ISO 8583 transactions:
 
-* **securedAmount**       sucessful transactions amount minus refund and reversal amount
-* **processedAmount**     total transactions amount, including failed transactions
-* **refundAmount**        total amount of refund transactions
-* **reversalAmount**      total amount of reversal transactions
-* **faultStat**           error codes statistics
-* **packetCount**         total packet count
+Parameter | Meaninng 
+--- | ---
+*securedAmount* | sucessful transactions amount minus refund and reversal amount
+*processedAmount* | total transactions amount, including failed transactions
+*refundAmount* | total amount of refund transactions
+*reversalAmount* | total amount of reversal transactions
+*faultStat* | error codes statistics
+*packetCount* | total packet count
 
 So, if stats server is running on port 4000, _telnet 4000_ will give json stats, that may look like this:
 
