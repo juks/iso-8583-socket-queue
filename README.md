@@ -63,7 +63,6 @@ Where config.json contains:
     "upstreamHost":    "10.0.0.1",
     "upstreamPort":    5000,
     "listenPort":      2014,
-    "listenHttpPort":  8080,
     "vv":              true,
     "logFile":         "log.txt"
 }
