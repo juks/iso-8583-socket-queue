@@ -6,7 +6,7 @@ SocketQueue acts as a gateway between bank ISO 8583 system and web applications 
 
                                   +-------------+
                                   |             | <-------> POS HTTP client
-     [Bank POS ISO HOST] <------> | SocketQueue | <-------> POS device
+     [Bank POS ISO HOST] <------> | SocketQueue | <-------> POS binary client
                                   |             | <-------> POS HTTP client
                                   +-------------+
                           
