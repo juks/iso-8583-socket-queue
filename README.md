@@ -78,6 +78,10 @@ The upstream and echo servers two in one:
     
 And the clients:
 
-     nodejs socketQueue.js --testTargetHost=localhost --testTargetPort=2014 --testClients=10 --vv
+    nodejs socketQueue.js --testTargetHost=localhost --testTargetPort=2014 --testClients=10 --vv
+     
+Or you can run only the echo server with so called "Socket Bank" inside:
+
+    nodejs socketQueue.js --vv --echoServerPort=5000
 
 
