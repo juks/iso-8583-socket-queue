@@ -40,23 +40,23 @@ SocketQueue is quite stable, but I recommend running it under the Supervisor uti
 ## Basic Usage
 To get familiar with all the command line and configuration file parameters available, run SocketQueue with _--help_ option:
 
-    nodejs socketQueue.js --help
+    node socketQueue.js --help
 
 To establish the gateway to remote ISO host on 10.0.0.1:5000, that accepts binary ISO 8583 messages, run the module as following:  
 
-    nodejs socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014
+    node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014
     
 To add verbosity and log data into a file use:  
 
-    nodejs socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014 --vv --logFile=log.txt
+    node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014 --vv --logFile=log.txt
     
 To make it silent in console, use _--silent_ option:  
 
-    nodejs socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014 --vv --logFile=log.txt --silent
+    node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014 --vv --logFile=log.txt --silent
     
 You may keep all the options inside the configuration file, and run the SocketQueue just like that:
 
-    nodejs socketQueue.js --c=config.json
+    node socketQueue.js --c=config.json
     
 Where config.json contains:
 
@@ -121,15 +121,15 @@ The following example shows two separate instances of SocketQueue running, but y
 
 The upstream and echo servers two in one:
 
-    nodejs socketQueue.js --upstreamHost=localhost --upstreamPort=5000 --listenPort=2014 --vv --echoServerPort=5000
+    node socketQueue.js --upstreamHost=localhost --upstreamPort=5000 --listenPort=2014 --vv --echoServerPort=5000
     
 Emulate 10 clients:
 
-    nodejs socketQueue.js --testTargetHost=localhost --testTargetPort=2014 --testClients=10 --vv
+    node socketQueue.js --testTargetHost=localhost --testTargetPort=2014 --testClients=10 --vv
      
 Or you can run only the echo server with so called "Socket Bank" onboard:
 
-    nodejs socketQueue.js --vv --echoServerPort=5000
+    node socketQueue.js --vv --echoServerPort=5000
 
 ## Collecting the Statistics
 The option _--statServerPort_ enables the statistics module and starts the stat server on given port number, that collects the following statistics of while SocketQueue accepts ISO 8583 transactions:
