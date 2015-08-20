@@ -34,21 +34,25 @@ SocketQueue acts as a gateway between bank ISO 8583 system and web applications 
     _npm install_
 
 ## Basing usage
+To get the list of all command line and configuration file parameters available, run SocketQueue with _--help_ option:
+
+    _nodejs socketQueue.js --help
+
 To establish the gateway to remote ISO host on 10.0.0.1:5000, that accepts both binary and HTTP connections, run the module with the following parameters:  
 
-    _nodejs socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenHttpPort=8080 --listenPort=2014_
+    nodejs socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenHttpPort=8080 --listenPort=2014
     
 To add verbosity and log data to log file use:  
 
-    _nodejs socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenHttpPort=8080 --listenPort=2014 --vv --logFile=log.txt_
+    nodejs socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenHttpPort=8080 --listenPort=2014 --vv --logFile=log.txt
     
 To make it silent in console, use _--silent_ option:  
 
-    _nodejs socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenHttpPort=8080 --listenPort=2014 --vv --logFile=log.txt --silent_
+    nodejs socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenHttpPort=8080 --listenPort=2014 --vv --logFile=log.txt --silent
     
 You may keep all the options inside the configuration file, and run the SocketQueue just like that:
 
-    _nodejs socketQueue.js --c=config.json
+    nodejs socketQueue.js --c=config.json
     
 Where config.json contains:
 
@@ -63,4 +67,4 @@ Where config.json contains:
 }
 ```
 
-You can find all awailable options example in config.json.dist file that comes with the module.
+You can find all available options example in config.json.dist file that comes with the module.
