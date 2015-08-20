@@ -33,6 +33,8 @@ SocketQueue acts as a gateway between bank ISO 8583 system and web applications 
     _cd SocketQueue_  
     _npm install_
 
+  Done!
+
 ## Basic Usage
 To get the list of all command line and configuration file parameters available, run SocketQueue with _--help_ option:
 
