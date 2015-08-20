@@ -40,27 +40,27 @@ SocketQueue is quite stable, but I recommend running it under the Supervisor uti
 ## Basic Usage
 To get familiar with all the command line and configuration file parameters available, run SocketQueue with _--help_ option:
 
-    node socketQueue.js --help
+    $ node socketQueue.js --help
 
 To establish the gateway to remote ISO host on 10.0.0.1:5000, that accepts binary ISO-8583 messages, run the module as following:  
 
-    node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014
+    $ node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014
     
 To add verbosity and log data into a file use:  
 
-    node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014 --vv --logFile=log.txt
+    $ node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014 --vv --logFile=log.txt
     
 To make it silent in console, use _--silent_ option:  
 
-    node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014 --vv --logFile=log.txt --silent
+    $ node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014 --vv --logFile=log.txt --silent
     
 You may keep all the options inside the configuration file, and run the SocketQueue just like that:
 
-    node socketQueue.js --c=config.json
+    $ node socketQueue.js --c=config.json
     
 Where config.json contains:
 
-```javascript
+```json
 {
     "upstreamHost":    "10.0.0.1",
     "upstreamPort":    5000,
@@ -82,12 +82,12 @@ To run the HTTP server use _--listenHttpPort_ option with the port number to lis
 When it is runnig on port 8080, you can test it like this with the "Purschase" EMV transcation data:
 
 ```bash
-curl -H "Content-Type: application/json" -X POST -d '{ "0": "0200",  "3": "0",  "4": 1000,  "7": "0818160933",  "11": 618160,  "12": "150820130600",  "22": "056",  "24": "200",  "25": "00",  "35": "4850781234567891=19082012232800000037",  "41": 992468,  "42": 124642124643,  "49": "810",  "55": "9f2608571f1e10d4fa4aac9f2701809f100706010a03a4b8029f37045bb074729f3602000c950500800010009a031508189c01009f02060000000010005f2a02064382023c009f1a0206439f03060000000000009f3303e0f0c89f34034403029f3501229f1e0835313230323831358407a00000000310109f41030000565f340101" }' http://localhost:8080
+$ curl -H "Content-Type: application/json" -X POST -d '{ "0": "0200",  "3": "0",  "4": 1000,  "7": "0818160933",  "11": 618160,  "12": "150820130600",  "22": "056",  "24": "200",  "25": "00",  "35": "4850781234567891=19082012232800000037",  "41": 992468,  "42": 124642124643,  "49": "810",  "55": "9f2608571f1e10d4fa4aac9f2701809f100706010a03a4b8029f37045bb074729f3602000c950500800010009a031508189c01009f02060000000010005f2a02064382023c009f1a0206439f03060000000000009f3303e0f0c89f34034403029f3501229f1e0835313230323831358407a00000000310109f41030000565f340101" }' http://localhost:8080
 ```
 
 In case of success you will get the following resonse
 
-```javascript
+```json
 {
    "result":{
       "0":"0210",
@@ -121,15 +121,15 @@ The following example shows two separate instances of SocketQueue running, but y
 
 The upstream and echo servers two in one:
 
-    node socketQueue.js --upstreamHost=localhost --upstreamPort=5000 --listenPort=2014 --vv --echoServerPort=5000
+    $ node socketQueue.js --upstreamHost=localhost --upstreamPort=5000 --listenPort=2014 --vv --echoServerPort=5000
     
 Emulate 10 clients:
 
-    node socketQueue.js --testTargetHost=localhost --testTargetPort=2014 --testClients=10 --vv
+    $ node socketQueue.js --testTargetHost=localhost --testTargetPort=2014 --testClients=10 --vv
      
 Or you can run only the echo server with so called "Socket Bank" onboard:
 
-    node socketQueue.js --vv --echoServerPort=5000
+    $ node socketQueue.js --vv --echoServerPort=5000
 
 ## Collecting the Statistics
 The option _--statServerPort_ enables the statistics module and starts the stat server on given port number, that collects the following statistics of while SocketQueue accepts ISO-8583 transactions:
