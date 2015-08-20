@@ -131,7 +131,7 @@ Or you can run only the echo server with so called "Socket Bank" onboard:
 
     nodejs socketQueue.js --vv --echoServerPort=5000
 
-## Gathering the Statistics
+## Collecting the Statistics
 The option _--statServerPort_ enables the statistics module and starts the stat server on given port number, that collects the following statistics of while SocketQueue accepts ISO 8583 transactions:
 
 Parameter | Meaninng 
