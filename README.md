@@ -35,7 +35,7 @@ SocketQueue acts as a gateway between bank ISO 8583 system and web applications 
 
   Done!
   
-SocketQueue is quite stable, but I recommend running it under supervisor https://github.com/Supervisor/supervisor
+SocketQueue is quite stable, but I recommend running it under the Supervisor utility https://github.com/Supervisor/supervisor
 
 ## Basic Usage
 To get familiar with all the command line and configuration file parameters available, run SocketQueue with _--help_ option:
