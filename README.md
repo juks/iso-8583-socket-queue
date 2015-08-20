@@ -68,9 +68,13 @@ Where config.json contains:
     "logFile":         "log.txt"
 }
 ```
+## Binary ISO 8583 service
+SocketQueue provides the service for the POS transactions, sent as ISO 8583 messages. To run ISO 8583 gateway on certain port, use the _--listenPort_ parameter.
+
+Each message consists of three part: the MTI (Message Type Indicator), Binary Mask (Describes the fields, being sent) and the values. You may find more detailed sytax description on Wiki page https://en.wikipedia.org/wiki/ISO_8583
 
 ## HTTP JSON Service
-SocketQueue understands the ISO 8583 transactions sent as JSON array. It converts them to ISO 8583 binary string, pads the values where necessary and sends to upstream. The ISO host responses are converted back to JSON and returned to client.
+SocketQueue understands the ISO 8583 transactions, sent as JSON arrays. It converts them to ISO 8583 string, pads the values where necessary and sends to upstream. The ISO host responses are converted back to JSON and returned to client.
 
 To run the HTTP server use _--listenHttpPort_ option with the port number to listen on.
 
