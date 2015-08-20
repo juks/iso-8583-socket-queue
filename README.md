@@ -134,7 +134,7 @@ Or you can run only the echo server with so called "Socket Bank" onboard:
 ## Collecting the Statistics
 The option _--statServerPort_ enables the statistics module and starts the stat server on given port number, that collects the following statistics of while SocketQueue accepts ISO 8583 transactions:
 
-Parameter | Meaninng 
+Parameter | Meaning 
 --- | ---
 *securedAmount* | sucessful transactions amount minus refund and reversal amount
 *processedAmount* | total transactions amount, including failed transactions
