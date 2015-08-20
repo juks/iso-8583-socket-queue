@@ -136,7 +136,7 @@ Parameter | Meaninng
 *refundAmount* | total amount of refund transactions
 *reversalAmount* | total amount of reversal transactions
 *faultStat* | error codes statistics
-*packetCount* | total packet count
+*packetCount* | packet count, total and by each MTI type that was handled during the operation
 
 So, if stats server is running on port 4000, _telnet 4000_ will give json stats, that may look like this:
 
