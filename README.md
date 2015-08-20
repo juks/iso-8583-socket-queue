@@ -75,7 +75,7 @@ SocketQueue provides the service for the POS transactions, sent as ISO 8583 mess
 Each message consists of three parts: the MTI (Message Type Indicator), Binary Mask (lists the fields, being sent) and the fields values. You may find more detailed sytax description on Wiki page https://en.wikipedia.org/wiki/ISO_8583
 
 ## HTTP JSON Service
-SocketQueue understands the ISO 8583 transactions, sent as JSON arrays. It converts them to ISO 8583 string, pads the values where necessary and sends to upstream. The ISO host responses are converted back to JSON and sent back to client as JSON array.
+SocketQueue understands the ISO 8583 transactions, sent as JSON arrays. Each valid message is converted to ISO 8583 string, values are padded where necessary. The message then goes to ISO host. The ISO host responses are converted back to JSON arrays and sent back to clients.
 
 To run the HTTP server use _--listenHttpPort_ option with the port number to listen on.
 
