@@ -46,7 +46,7 @@ To establish the gateway to remote ISO host on 10.0.0.1:5000, that accepts binar
 
     nodejs socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014
     
-To add verbosity and log data to log file use:  
+To add verbosity and log data into a file use:  
 
     nodejs socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014 --vv --logFile=log.txt
     
