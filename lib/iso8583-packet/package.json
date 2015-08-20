@@ -1,0 +1,33 @@
+{
+  "name": "iso8583-packet",
+  "version": "0.2.0",
+  "description": "Node implementation of iso8583 packet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juks/node-iso8583packet.git"
+  },
+  "keywords": [
+    "iso8583packet"
+  ],
+  "author": {
+    "name": "Igor Askarov juks@juks.ru"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juks/node-iso8583packet/issues"
+  },
+  "homepage": "https://github.com/juks/node-iso8583packet#readme",
+  "dependencies": {
+    "iso8583-smartvista": "0.x.x"
+  },
+  "readme": "# node-iso8583packet\n\nIgor Askarov juks@juks.ru\nhttps://github.com/juks/node-iso8583packet.git\n\n# DESCRIPTION\n\nnode-iso8583packet is a Node.js implementation of iso8583 packet.\n```\n\n# REQUIREMENTS\n\n* The current version is tested to run on node.js 0.10.25\n\n# NPM INSTALL\n\nTo be defined\n\n# SOURCE INSTALL\n\n``` bash\n$ git clone https://github.com/juks/node-iso8583packet.git\n```\n\n# LICENSE\n\nSee LICENSE file.\n",
+  "readmeFilename": "README.md",
+  "gitHead": "f9c485d219ceae88294f24acda2672597d788514",
+  "_id": "iso8583-packet@0.2.0",
+  "_shasum": "f4b93aef74a3784b9fce85e073a15d87d769366f",
+  "_from": "iso8583-packet@>=0.2.0 <0.3.0"
+}

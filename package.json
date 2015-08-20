@@ -5,8 +5,6 @@
   "main": "socketQueue.js",
   "dependencies": {
     "colors": "^1.0.3",
-    "iso8583-packet": "^0.2.0",
-    "iso8583-smartvista": "^0.1.0",
     "moment": "^2.9.0",
     "optimist": "^0.6.1",
     "winston": "^1.0.1",

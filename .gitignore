@@ -2,11 +2,4 @@ log.txt
 log1.txt
 socketQueue.pid
 config.json
-/node_modules/colors
-/node_modules/moment
-/node_modules/optimist
-/node_modules/rabbit.js
-/node_modules/winston
-/node_modules/winston-logstash
-/node_modules/iso8583-packet
-/node_modules/iso8583-smartvista
+/node_modules

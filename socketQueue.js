@@ -1,9 +1,9 @@
-var socketServer    = require('socketServer');
+var socketServer    = require('./lib/socketServer');
+var helpers         = require('./lib/helpers');
 var argv            = require('optimist').argv;
 var winston         = require('winston');
                       require('winston-logstash');
 var fs              = require('fs');
-var helpers         = require('helpers');
 var logger          = false;
 var fileTransport   = null;
 
@@ -232,7 +232,7 @@ if (c.upstreamHost) {
   var serverHttp      = null;
 }
 
-if (c.echoServerPort || c.testClients) var testSuite = require('testSuite');
+if (c.echoServerPort || c.testClients) var testSuite = require('./lib/testSuite');
 
 // Start test server and perform tests
 if (c.echoServerPort) {
