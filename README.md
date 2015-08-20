@@ -95,3 +95,35 @@ The option _--statServerPort_ enables the statistics module and starts the stat 
 * **reversalAmount**      total amount of reversal transactions
 * **faultStat**           error codes statistics
 * **packetCount**         total packet count
+
+So, if stats server is running on port 4000, _telnet 4000_ will give json stats, that may look like this:
+
+```javascript
+{
+   "securedAmount":1383554.49,
+   "processedAmount":1876911.69,
+   "refundAmount":0,
+   "reversalAmount":3460,
+   "faultStat":{
+      "5":2,
+      "100":7,
+      "103":1,
+      "116":3,
+      "117":1,
+      "120":10
+   },
+   "packetCount":{
+      "total":2265,
+      "0800":730,
+      "0810":724,
+      "0200":367,
+      "0210":364,
+      "0400":48,
+      "0410":32
+   }
+}
+```
+This is just fine to use with Zabbix, Kibana or other monitoring tools.
+
+## Signals
+SocketQueue treats well the TERM, INT and HUP signals. It gracefully quits on TERM and INT and resets the stats on HUP signal. To force process exit give it a KILL signal.
