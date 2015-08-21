@@ -20,6 +20,7 @@
 	"testTargetPort": ,
 	"testRealLife": ,
 	"statServerPort": ,
+	"statDumpFile": ,
 	"c": "",
 	"v": false,
 	"vv": false,

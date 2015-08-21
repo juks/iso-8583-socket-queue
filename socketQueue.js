@@ -226,6 +226,10 @@ if (c.upstreamHost) {
     var serverHttp = new socketServer.clientHttpServer(upstreamServer, c).listen(c.listenHttpPort);
     dd("Relay HTTP server is now running on port " + c.listenHttpPort);
   }
+
+  if (upstreamServer.statServer && c.statDumpFile) {
+    upstreamServer.statServer.restore(JSON.parse(fs.readFileSync(c.statDumpFile)));
+  }
 } else {
   var upstreamServer  = null;
   var serverSocket    = null;
@@ -281,9 +285,15 @@ process.on('SIGHUP', function() {
 // On Exit
 process.on('exit', function(code) {
   if (c.pidFile) {
+    // Clear pid file
     fs.writeFile(c.pidFile, '', function (err) {
       if (err) dd(err);
     });
+  }
+
+  // Dump stats
+  if (upstreamServer && upstreamServer.statServer && c.statDumpFile) {
+    fs.writeFileSync(c.statDumpFile, JSON.stringify(upstreamServer.statServer.dump()));
   }
 });
 

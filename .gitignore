@@ -2,4 +2,5 @@ log.txt
 log1.txt
 socketQueue.pid
 config.json
+stats.json
 /node_modules

@@ -20,6 +20,7 @@ exports.params = {
 	testTargetPort:         {sample: '<port number>',       type: 'n', title: 'The destination port to test'},
 	testRealLife:           {sample: '<level>',             type: 'n', title: 'Make tests more realistic'},
 	statServerPort:         {sample: '<port number>',       type: 'n', title: 'Run stat server on given port'},
+	statDumpFile:           {sample: '<file name>',         type: 's', title: 'Use this file to keep stat server data'},
 	c:                      {sample: '<confing file path>', type: 's', title: 'Read configuration from file'},
 	v:                      {sample: '',                    type: 'b', title: 'Sets logging level to warn'},
 	vv:                     {sample: '',                    type: 'b', title: 'Sets logging level to verbose'},
