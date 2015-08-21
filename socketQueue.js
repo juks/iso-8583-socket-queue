@@ -227,7 +227,7 @@ if (c.upstreamHost) {
     dd("Relay HTTP server is now running on port " + c.listenHttpPort);
   }
 
-  if (upstreamServer.statServer && c.statDumpFile) {
+  if (upstreamServer.statServer && c.statDumpFile && fs.existsSync(c.statDumpFile)) {
     upstreamServer.statServer.restore(JSON.parse(fs.readFileSync(c.statDumpFile)));
   }
 } else {
