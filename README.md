@@ -114,7 +114,7 @@ In case of success you will get the following resonse
 }
 ```
 
-In case you have verbose output or logging enabled, the following messages will be logged:
+In case you have verbose output or logging enabled, the following messages will be logged (captured using the local echo server, the card is not real one):
 
 ```
 2015-08-31 18:22:57 - info: New HTTP socket                         
