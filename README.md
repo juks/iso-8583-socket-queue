@@ -114,6 +114,80 @@ In case of success you will get the following resonse
 }
 ```
 
+In case you have verbose output or logging enabled, the following messages will be logged:
+
+```
+2015-08-31 18:22:57 - info: New HTTP socket                         
+2015-08-31 18:22:57 - info: Client http:127.0.0.1:53578 connected                         
+2015-08-31 18:22:57 - info: Client http:127.0.0.1:53578 sent data                         
+2015-08-31 18:22:57 - verbose: 
+
+http:127.0.0.1:53578
+================================================================================================
+
+     [Purchase Request]
+
+     Message Type Indicator [0].......................0200
+     Bitmap [1].......................................3230058020c08200
+     Processing Code [3]..............................0
+     Amount, Transaction [4]..........................1000
+     Transmission Date and Time [7]...................0818160933
+     System Trace Audit Number [11]...................618160
+     Time, Local Transaction [12].....................150831182300
+     Pos Entry Mode [22]..............................056 (Card Data Input Mode: <Integrated circuit card read; CVV data reliable>; Cardholder Auth Method: <Signature Based>)
+     Function Code [24]...............................200
+     Pos Condition Code [25]..........................00
+     Track 2 Data [35]................................485078******7891=19082012232800000037
+     Card Acceptor Terminal Identification [41].......00992468
+     Merchant Id [42].................................000124642124643
+     Currency code, transaction [49]..................810
+     EMV Data [55]....................................9f2608571f1e10d4fa4aac9f2701809f100706010a03a4b8029f37045bb074729f3602000c950500800010009a031508189c01009f02060000000010005f2a02064382023c009f1a0206439f03060000000000009f3303e0f0c89f34034403029f3501229f1e0835313230323831358407a00000000310109f41030000565f340101
+
+================================================================================================
+
+                         
+2015-08-31 18:22:57 - info: Writing to queue http:127.0.0.1:53578 [0]                         
+2015-08-31 18:22:57 - info: New queue item 1                         
+2015-08-31 18:22:57 - info: Processing queue [pending 1 / total 1]                         
+2015-08-31 18:22:57 - info: Upstreaming data for http:127.0.0.1:53578                         
+2015-08-31 18:22:57 - verbose: [02630200...]                         
+2015-08-31 18:22:57 - info: Echo server got data                         
+2015-08-31 18:22:57 - info: Replying to client 00992468                         
+2015-08-31 18:22:57 - info: Echo server sent response                         
+2015-08-31 18:22:57 - info: Got data from ISO-host (306b)                         
+2015-08-31 18:22:57 - verbose: [03020210...]                         
+2015-08-31 18:22:57 - info: Parsed data for http:127.0.0.1:53578                         
+2015-08-31 18:22:57 - verbose: 
+
+ISO host to http:127.0.0.1:53578
+================================================================================================
+
+     [Purchase Response]
+
+     Message Type Indicator [0].......................0210
+     Bitmap [1].......................................723005802ec08200
+     Primary Account Number [2].......................485078******7891
+     Processing Code [3]..............................0
+     Amount, Transaction [4]..........................1000
+     Transmission Date and Time [7]...................0831182257
+     System Trace Audit Number [11]...................618160
+     Time, Local Transaction [12].....................150831182300
+     Pos Entry Mode [22]..............................056 (Card Data Input Mode: <Integrated circuit card read; CVV data reliable>; Cardholder Auth Method: <Signature Based>)
+     Function Code [24]...............................200
+     Pos Condition Code [25]..........................0
+     Track 2 Data [35]................................485078******7891=19082012232800000037
+     Retrieval Reference Number [37]..................347408919250
+     Approval code [38]...............................2Ttb0c
+     Response code [39]...............................0 (Successful Transaction)
+     Card Acceptor Terminal Identification [41].......00992468
+     Merchant Id [42].................................000124642124643
+     Currency code, transaction [49]..................810
+     EMV Data [55]....................................9f2608571f1e10d4fa4aac9f2701809f100706010a03a4b8029f37045bb074729f3602000c950500800010009a031508189c01009f02060000000010005f2a02064382023c009f1a0206439f03060000000000009f3303e0f0c89f34034403029f3501229f1e0835313230323831358407a00000000310109f41030000565f340101
+
+================================================================================================
+```
+
+
 ## ISO Host Emulation and Self Test Clients
 Using _--echoServerPort_ parameter, you can run the local ISO host emulator that supports basic operations like 800 (echo), 200 (purchase) and 400 (reversal). To emulate the real client connections/requests process you can add the _--testClients_ option. Do not forget to supply it with _--testTargetHost_ and _--testTargetPort_.
 
