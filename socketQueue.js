@@ -75,6 +75,7 @@ for (var name in validParams) {
 
 global.c = c;
 global.dd = dd;
+global.defaultSyntax = (!c.hasOwnProperty('openWay') || c.hasOwnProperty('smartVista')) ? 'smartVista' : 'openWay';
 
 // Display help screen
 if (c.help) {
