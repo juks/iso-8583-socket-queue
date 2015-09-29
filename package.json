@@ -1,6 +1,6 @@
 {
   "name": "socketQueue",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "The ISO8583 host gateway that supports both ISO8583 and http connections",
   "main": "socketQueue.js",
   "dependencies": {
