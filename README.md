@@ -12,6 +12,7 @@ SocketQueue acts as a gateway between bank ISO-8583 system and web applications 
                           
 ## Features
 * Connection manager
+* Friendly interface to unfriendly SmartVista / OpenWay processing systems
 * Host-to-Host on the left hand (one permanent TCP connection for everything), Host‑to‑POS (many TCP connections) on the right
 * Supports both binary ISO-8583 and JSON over HTTP operation modes at the same time
 * ISO8583 validation, ISO-8583 values padding
