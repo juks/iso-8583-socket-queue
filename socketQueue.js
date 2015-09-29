@@ -16,6 +16,7 @@ String.prototype.repeat = function(num)  {
 }
 
 var c = {};
+var defaults = {};
 
 var readCfgParam = function(name, value) {
   if (!validParams.hasOwnProperty(name)) {
@@ -70,9 +71,11 @@ if (c.c) {
 for (var name in validParams) {
   if (validParams[name]['default'] && !c.hasOwnProperty(name)) {
     c[name] = validParams[name]['default'];
+    defaults[name] = true;
   }
 }
 
+if (c.hasOwnProperty('openWay') && defaults.hasOwnProperty('useLengthHeader')) c.useLengthHeader = false;
 global.c = c;
 global.dd = dd;
 global.defaultSyntax = (!c.hasOwnProperty('openWay') || c.hasOwnProperty('smartVista')) ? 'smartVista' : 'openWay';
@@ -118,7 +121,7 @@ if (c.helpJson) {
 }
 
 // Checking parameters
-if (c.upstreamHost && (!c.upstreamPort || !c.listenPort)) {
+if (c.upstreamHost && (!c.upstreamPort || (!c.listenPort && !c.listenHttpPort))) {
   console.log("Usage socketQueue.js [options]");
   console.log("Run socketQueue.js --help to see help");
 
@@ -220,8 +223,10 @@ dd('Important: starting...'.green);
 if (c.upstreamHost) {
   var upstreamServer = new socketServer.upstream(c);
 
-  var serverSocket = new socketServer.clientSocket(upstreamServer, c).listen(c.listenPort);
-  dd("Relay server is now running on port " + c.listenPort);
+  if (c.listenPort) {
+    var serverSocket = new socketServer.clientSocket(upstreamServer, c).listen(c.listenPort);
+    dd("Relay server is now running on port " + c.listenPort);
+  }
 
   if (c.listenHttpPort) {
     var serverHttp = new socketServer.clientHttpServer(upstreamServer, c).listen(c.listenHttpPort);
