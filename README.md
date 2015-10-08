@@ -248,10 +248,10 @@ So, if stats server is running on port 4000, _telnet 4000_ will give json stats,
 This is just fine to use with Zabbix, Kibana or other monitoring tools.
 
 ## Compatibility
-SocketQueue is known to work fine with SmartVista POS processing system.
+One can consider SocketQueue to work with SmartVista and OpenWay processing systems.
 
 ## Signals
-SocketQueue treats well the TERM, INT and HUP signals. It gracefully quits on TERM/INT and resets the stats on HUP signal. To force process exit give it a KILL signal.
+SocketQueue treats well the TERM, INT and HUP signals. It gracefully quits on TERM/INT and resets the stats on HUP signal. To force process termination, give it a KILL signal.
 
 ## Reporting Bugs
 Please report bugs in the Github issue tracker: https://github.com/juks/SocketQueue/issues
