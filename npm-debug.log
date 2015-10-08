@@ -1,0 +1,45 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'version',
+1 verbose cli   'minor' ]
+2 info using npm@2.14.2
+3 info using node@v4.0.0
+4 info git [ 'status', '--porcelain' ]
+5 verbose stack Error: Git working directory not clean.
+5 verbose stack M lib/helpers/lib/helpers.js
+5 verbose stack M lib/iso8583-logic/lib/iso8583Logic.js
+5 verbose stack M lib/iso8583-packet/lib/iso8583Packet.js
+5 verbose stack M lib/iso8583/lib/packager/openWay.js
+5 verbose stack M lib/iso8583/lib/packager/smartVista.js
+5 verbose stack M lib/socketServer/lib/upstream.js
+5 verbose stack M lib/testSuite/lib/echoServer.js
+5 verbose stack M lib/testSuite/lib/socketBank.js
+5 verbose stack M socketQueue.js
+5 verbose stack     at /usr/local/lib/node_modules/npm/lib/version.js:171:21
+5 verbose stack     at ChildProcess.exithandler (child_process.js:194:7)
+5 verbose stack     at emitTwo (events.js:87:13)
+5 verbose stack     at ChildProcess.emit (events.js:172:7)
+5 verbose stack     at maybeClose (internal/child_process.js:817:16)
+5 verbose stack     at Socket.<anonymous> (internal/child_process.js:319:11)
+5 verbose stack     at emitOne (events.js:77:13)
+5 verbose stack     at Socket.emit (events.js:169:7)
+5 verbose stack     at Pipe._onclose (net.js:469:12)
+6 verbose cwd /home/askarov/projects/socketQueue-git
+7 error Linux 3.16.0-38-generic
+8 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "version" "minor"
+9 error node v4.0.0
+10 error npm  v2.14.2
+11 error Git working directory not clean.
+11 error M lib/helpers/lib/helpers.js
+11 error M lib/iso8583-logic/lib/iso8583Logic.js
+11 error M lib/iso8583-packet/lib/iso8583Packet.js
+11 error M lib/iso8583/lib/packager/openWay.js
+11 error M lib/iso8583/lib/packager/smartVista.js
+11 error M lib/socketServer/lib/upstream.js
+11 error M lib/testSuite/lib/echoServer.js
+11 error M lib/testSuite/lib/socketBank.js
+11 error M socketQueue.js
+12 error If you need help, you may report this error at:
+12 error     <https://github.com/npm/npm/issues>
+13 verbose exit [ 1, true ]

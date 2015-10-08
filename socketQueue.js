@@ -75,7 +75,6 @@ for (var name in validParams) {
   }
 }
 
-if (c.hasOwnProperty('openWay') && defaults.hasOwnProperty('useLengthHeader')) c.useLengthHeader = false;
 global.c = c;
 global.dd = dd;
 global.defaultSyntax = (!c.hasOwnProperty('openWay') || c.hasOwnProperty('smartVista')) ? 'smartVista' : 'openWay';
