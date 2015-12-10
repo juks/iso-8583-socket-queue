@@ -183,9 +183,10 @@ if (c.debugLevel) {
   if (c.logstashHost) {
     ls = new (winston.transports.Logstash)(
       {
-        host: c.logstashHost,
-        port: c.logstashPort,
-        node_name: c.logstashNode
+        host:           c.logstashHost,
+        port:           c.logstashPort,
+        node_name:      c.logstashNode,
+        level:          c.debugLevel
       });
 
     ls.on('error', function (error) {
