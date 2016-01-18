@@ -80,6 +80,8 @@ SocketQueue understands the ISO-8583 transactions, sent as JSON arrays. Each val
 
 To run the HTTP server use _--listenHttpPort_ option with the port number to listen on.
 
+    $ node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenHttpPort=8080 --vv --logFile=log.txt
+
 When it is runnig on port 8080, you can test it like this with the "Purschase" EMV transcation data:
 
 ```bash
