@@ -259,4 +259,4 @@ SocketQueue treats well the TERM, INT and HUP signals. It gracefully quits on TE
 Please report bugs in the Github issue tracker: https://github.com/juks/SocketQueue/issues
 
 ## Copyright
-Copyright (c) 2015 Igor Askarov (juks@juks.ru). See Licence file for details.
+Copyright (c) 2015–2016 Igor Askarov (juks@juks.ru). See Licence file for details.
