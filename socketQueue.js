@@ -307,12 +307,20 @@ function gracefulQuit() {
   // If no upstream server running -- just quit
   if (!upstreamServer) {
     dd('Quitting...');
-    process.exit(0);
+    global.flushAndQuit();
   // If there is upstream server -- let it pick a proper moment then quit
   } else {
     if (serverSocket) serverSocket.deny();
     if (serverHttp) serverHttp.deny();
 
     upstreamServer.emit('terminate');
+  }
+}
+
+global.flushAndQuit = function() {
+  if (fileTransport) {
+    helpers.winstonFlushAndQuit(fileTransport);
+  } else {
+    process.exit(0);
   }
 }
