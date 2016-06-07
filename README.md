@@ -255,9 +255,9 @@ One can consider SocketQueue to work with SmartVista and OpenWay processing syst
 ## Signals
 SocketQueue treats well the TERM, INT and HUP signals. It gracefully quits on TERM/INT and resets the stats on HUP signal. To force process termination, give it a KILL signal.
 
-## Demo host
+## ISO-8583 echo host
 There is a public demo instance of SocketQueue running on the following address:
-* askarov.com:12345 - Binary upstream
+* askarov.com:12345 - raw upstream
 * askarov.com:12346 - HTTP JSON upstream
 
 To talk to ISO host:
