@@ -3,4 +3,5 @@ log1.txt
 socketQueue.pid
 config.json
 stats.json
+npm-debug.log
 /node_modules
