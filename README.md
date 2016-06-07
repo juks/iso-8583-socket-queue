@@ -17,9 +17,9 @@ SocketQueue acts as a gateway between bank ISO-8583 system and web applications 
 * Supports both binary ISO-8583 and JSON over HTTP operation modes at the same time
 * ISO8583 validation, ISO-8583 values padding
 * Safe data/events logger (console, files, LogStash)
-* Transactions queue
-* Auto-reversal implementation
+* Message queue
 * TID queueing (wait for busy TID)
+* Auto-reversal implementation
 * Socket Bank (emulates the ISO host)
 * Test clients (self test mode)
 * Stats Server (current transactions amount, MTI stats)
