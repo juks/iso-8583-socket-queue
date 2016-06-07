@@ -260,7 +260,7 @@ There is a public demo instance of SocketQueue running on the following address:
 * askarov.com:12345 - Binary upstream
 * askarov.com:12346 - HTTP JSON upstream
 
-To check ISO (navigate to ):
+To talk to ISO host:
 ```bash
 cat ./sample_payloads/sv_800_echo.txt - | nc askarov.com 12345
 ```
