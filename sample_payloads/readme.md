@@ -15,10 +15,11 @@ purchase payload data you should replace the value of 160607173800 with the prop
 ## Using payloads
 
 To use payload data from sample files simply execute the following pipelined command:
-_cat <payload filename> - | ncat <echo hostname> <echo host port>_
+
+    $ cat &lt;payload filename&gt; - | ncat &lt;echo host&gt; &lt;echo host port&gt;
 
 Press CTRL+D to terminate.
 
 For live example:
 
-_cat ./sv_800_echo.txt - | nc askarov.com 12345_
+    $ cat ./sv_800_echo.txt - | nc askarov.com 12345
