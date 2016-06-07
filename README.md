@@ -262,12 +262,12 @@ There is a public demo instance of SocketQueue running on the following address:
 
 You can use sample payload to talk to echo host in raw mode:
 ```bash
-cat ./sample_payloads/sv_800_echo.txt - | nc askarov.com 12345
+$ cat ./sample_payloads/sv_800_echo.txt - | nc askarov.com 12345
 ```
 
 For HTTP JSON:
 ```bash
-curl -H "Content-Type: application/json" -X POST -d '{ "0": "800", "3": "0", "7": "0607161700", "11": "123456", "24": "0", "41": "00123456", "42": "123567890124567" }' http://askarov.com:12346
+$ curl -H "Content-Type: application/json" -X POST -d '{ "0": "800", "3": "0", "7": "0607161700", "11": "123456", "24": "0", "41": "00123456", "42": "123567890124567" }' http://askarov.com:12346
 ```
 
 ## Reporting Bugs
