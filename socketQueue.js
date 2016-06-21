@@ -25,7 +25,7 @@ var readCfgParam = function(name, value) {
     if (validParams[name]['type'] == 's') {
       return value;
     } else if (validParams[name]['type'] == 'n') {
-      return parseInt(value);мш
+      return parseInt(value);
     } else {
       return value == true ? true : false;
     }
