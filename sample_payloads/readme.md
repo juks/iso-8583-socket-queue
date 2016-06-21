@@ -16,7 +16,7 @@ purchase payload data you should replace the value of 160607173800 with the prop
 
 To use payload data from sample files simply execute the following pipelined command:
 
-    $ cat payload filename - | ncat host port
+    $ cat payload_filename - | ncat host port
 
 Press CTRL+D to terminate.
 
