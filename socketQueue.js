@@ -1,6 +1,7 @@
 var socketServer    = require('./lib/socketServer');
 var helpers         = require('./lib/helpers');
 var argv            = require('optimist').argv;
+var cfgParams       = require('./lib/cfgParams');
 var winston         = require('winston');
                       require('winston-logstash');
 var fs              = require('fs');
@@ -8,7 +9,7 @@ var logger          = false;
 var fileTransport   = null;
 
 // Available runtime parameters configuration
-var validParams = require('./parameters.js').params;
+global.validParams = require('./parameters.js').params;
 
 // This one displays configuration help
 String.prototype.repeat = function(num)  {
@@ -18,25 +19,11 @@ String.prototype.repeat = function(num)  {
 var c = {};
 var defaults = {};
 
-var readCfgParam = function(name, value) {
-  if (!validParams.hasOwnProperty(name)) {
-    return null;
-  } else {
-    if (validParams[name]['type'] == 's') {
-      return value;
-    } else if (validParams[name]['type'] == 'n') {
-      return parseInt(value);
-    } else {
-      return value == true ? true : false;
-    }
-  }
-}
-
 // Loading command line parameters
 for (var name in argv) {
   if (name == '_' || name.substring(0,1) == '$') continue;
 
-  var val = readCfgParam(name, argv[name]);
+  var val = cfgParams.read(name, argv[name]);
 
   if (val !== null) {
     c[name] = val;
@@ -77,50 +64,24 @@ for (var name in validParams) {
 
 global.c = c;
 global.dd = dd;
-global.defaultSyntax = (!c.hasOwnProperty('openWay') || c.hasOwnProperty('smartVista')) ? 'smartVista' : 'openWay';
+global.defaultSyntax = c.hostConfig;
 
 // Display help screen
 if (c.help) {
-  console.log("\nSocketQueue is a socket queue (many-to-many-many-to-one connection demultiplexer) with extra toots (ISO8583 host emulator, IS08583 host load tests)");
-  console.log("\nAvailable parameters:\n");
-  for (var name in validParams) {
-    var left = '--' + name;
-    if (validParams[name]['sample']) left += '=' + validParams[name]['sample'];
-    left += ':';
-
-    console.log(left + ' '.repeat(50 - left.length) + validParams[name]['title']);
-  }
-  console.log("\nExample: node socketQueue.js --upstreamHost=10.1.15.146 --upstreamPort=2013 --listenPort=2014 --vv --logFile=log.txt\n");
+  cfgParams.showHelp();
 
   process.exit(0);
 }
 
-// Display json help
+// Display help in JSON format
 if (c.helpJson) {
-  var i = 0; var cnt = Object.keys(validParams).length;
-  console.log('{');
-  for (var name in validParams) {
-    var msg = '"' + name + '": ';
-    if (validParams[name]['default']) {
-      msg += validParams[name]['type'] == 's' ? '"' + validParams[name]['default'] + '"' : validParams[name]['default'];
-    } else if (validParams[name]['type'] == 's') {
-      msg += '""';
-    } else if (validParams[name]['type'] == 'b') {
-      msg += 'false'
-    } else {
-      msg += '';
-    }
-    console.log('    ' + msg + (i == cnt - 1 ? '' : ','));
-    i++;
-  }
-
-  console.log('}');
+  cfgParams.showHelpJSON();
 
   process.exit(0);
 }
 
 // Checking parameters
-if (c.upstreamHost && (!c.upstreamPort || (!c.listenPort && !c.listenHttpPort))) {
+if ((!c.upstreamHost && !c.testClients && !c.echoServerPort) || c.upstreamHost && (!c.upstreamPort || (!c.listenPort && !c.listenHttpPort))) {
   console.log("Usage socketQueue.js [options]");
   console.log("Run socketQueue.js --help to see help");
 
@@ -218,6 +179,7 @@ function dd(msg, level)  {
 }
 
 dd('Important: starting...'.green);
+dd('Remote host configuration name: ' + c.hostConfig);
 
 // Start the upstream server
 if (c.upstreamHost) {

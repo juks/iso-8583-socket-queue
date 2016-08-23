@@ -1,0 +1,8 @@
+//
+// To create a remote system configuration of your own:
+//
+// 1. Copy one of bundled templates (smartVista.js, openWay.js, etc) to a file named <your template>.js
+// 2. Start SocketQueue with --hostConfig=<your template> parameter
+//
+// See lib/iso8583/lib/packer folder for the list of available data types
+//

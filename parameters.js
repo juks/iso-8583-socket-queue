@@ -1,6 +1,7 @@
 exports.params = {
-  smartVista:             {sample: '',                    type: 'b', title: 'Follow SmartVista ISO8583 syntax (default)'},
-  openWay:                {sample: '',                    type: 'b', title: 'Follow OpenWay ISO8583 syntax'},
+  hostConfig:             {sample: '',                    type: 's', title: 'Sets remote syntax configuration. Available templates: smartVista (default), openWay. See iso8583/lib/packager', default: 'smartVista'},
+  smartVista:             {sample: '',                    type: 'b', title: 'Follow SmartVista ISO8583 syntax (default)',  replaced: 'system'},
+  openWay:                {sample: '',                    type: 'b', title: 'Follow OpenWay ISO8583 syntax',               replaced: 'system'},
   upstreamHost:           {sample: '<ip or host>',        type: 's', title: 'Host or ip address for the upstream server to connect to'},
   upstreamPort:           {sample: '<port number>',       type: 'n', title: 'Upstream server port to connect to'},
   listenPort:             {sample: '<port number>',       type: 'n', title: 'Local server port'},
