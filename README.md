@@ -191,7 +191,7 @@ ISO host to http:127.0.0.1:53578
 ```
 
 
-## ISO Host Emulation and Self Test Clients
+## ISO Host Emulation and “Self Test” Clients
 Using _--echoServerPort_ parameter, you can run the local ISO host emulator that supports basic operations like 800 (echo), 200 (purchase) and 400 (reversal). To emulate the real client connections/requests process you can add the _--testClients_ option. Do not forget to supply it with _--testTargetHost_ and _--testTargetPort_.
 
 The following example shows two separate instances of SocketQueue running, but you can also stack all parameters in one line and start only one copy.
