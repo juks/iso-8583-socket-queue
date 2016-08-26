@@ -36,7 +36,7 @@ SocketQueue acts as a gateway between bank ISO-8583 system and web applications 
 
   Done!
   
-SocketQueue is tested in production to work for months, processing thousands transactions a day without crashes or memory leaks, but I recommend running it under the Supervisor utility https://github.com/Supervisor/supervisor.
+SocketQueue is tested in production to work for months, processing thousands of transactions a day without crashes or memory leaks. I recommend running it under the Supervisor utility https://github.com/Supervisor/supervisor.
 Sample supervisor config may look like:
 
     [program:socketqueue]
