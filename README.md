@@ -36,7 +36,18 @@ SocketQueue acts as a gateway between bank ISO-8583 system and web applications 
 
   Done!
   
-SocketQueue is quite stable, but I recommend running it under the Supervisor utility https://github.com/Supervisor/supervisor
+SocketQueue is tested in production to work for months, processing thousands transactions a day without crashes or memory leaks, but I recommend running it under the Supervisor utility https://github.com/Supervisor/supervisor.
+Sample supervisor config may look like:
+
+    [program:socketqueue]
+    command=node ./socketQueue.js -c config.json
+    directory=/path/to/socketqueue
+    autostart=true
+    autorestart=true
+    startsecs=5
+    startretries=3
+    stopsignal=TERM
+    stopwaitsecs=10
 
 ## Basic Usage
 To get familiar with all the command line and configuration file parameters available, run SocketQueue with _--help_ option:
