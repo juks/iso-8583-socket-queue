@@ -269,7 +269,7 @@ SocketQueue treats well the TERM, INT and HUP signals. It gracefully quits on TE
 “Graceful quit” means that before quitting:
 * there will be no new connections from POS clients accepted
 * active transactions responses will be delivered
-* given amount of auto-reversal requests (if enabled) will be perfprmed.
+* given amount of auto-reversal requests (if enabled) will be performed.
 
 To force process termination at any time, give it a KILL signal.
 
