@@ -264,7 +264,7 @@ This is just fine to use with Zabbix, Kibana or other monitoring tools.
 One can consider SocketQueue to work with SmartVista and OpenWay processing systems.
 
 ## Signals
-SocketQueue treats well the TERM, INT and HUP signals. It gracefully quits on TERM/INT and resets the stats/reopens log file on HUP signal.
+SocketQueue treats just fine the TERM, INT and HUP signals. It gracefully quits on TERM/INT and resets the stats/reopens log file on HUP signal.
 
 “Graceful quit” means that before quitting:
 * there will be no new connections from POS clients accepted
