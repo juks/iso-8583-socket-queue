@@ -27,7 +27,7 @@ The recieved data is assigned to appropriate sender using the TID (Terminal Id) 
 * Stats Server (current transactions amount, MTI stats)
 * Solves the SmartVista weird transactions mishandling
 * Lighweight, reliable, single thread, event based. Hundreds of concurrent connections/transactions at a time
-* Bonus: protects remote ISO hosts from the PCI-DSS automated scanning procedures (eg. SmartVista sometimes just crashes)
+* Bonus: prevents remote ISO hosts crashes because of PCI-DSS automated security scanning procedures
  
 ## Installation
 * Clone the repository  
