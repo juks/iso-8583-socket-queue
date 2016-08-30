@@ -204,6 +204,17 @@ ISO host to http:127.0.0.1:53578
 ================================================================================================
 ```
 
+Also, there is a /raw URL that accepts HEX-encoded data.
+
+Here goest an example for the following message:
+```
+08002220010000800000990000083020354500000183100000001
+```
+
+That can get trasmitted over HTTP as:
+```bash
+$ curl -H "Content-Type: text/plain" -X POST -d '303830302220010000c00000303030303030303630373136313730303132333435363030303030313233343536313233353637383930313234353637' http://localhost:8080/raw
+```
 
 ## ISO Host Emulation and “Self Test” Clients
 Using _--echoServerPort_ parameter, you can run the local ISO host emulator that supports basic operations like 800 (echo), 200 (purchase) and 400 (reversal). To emulate the real client connections/requests process you can add the _--testClients_ option. Do not forget to supply it with _--testTargetHost_ and _--testTargetPort_.
