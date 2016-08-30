@@ -206,7 +206,7 @@ ISO host to http:127.0.0.1:53578
 
 Also, there is a /raw URL that accepts HEX-encoded data.
 
-Here goest an example for the following message:
+Here goes an example for the following message:
 ```
 08002220010000800000990000083020354500000183100000001
 ```
