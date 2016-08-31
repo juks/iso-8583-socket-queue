@@ -187,7 +187,7 @@ if (c.upstreamHost) {
 
   if (c.listenPort) {
     var serverSocket = new socketServer.clientSocket(upstreamServer, c).listen(c.listenPort);
-    dd("Relay server is now running on port " + c.listenPort);
+    dd("Relay raw ISO-8583 server is now running on port " + c.listenPort);
   }
 
   if (c.listenHttpPort) {
