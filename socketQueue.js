@@ -43,7 +43,7 @@ if (c.c) {
   var cfgData = JSON.parse(fs.readFileSync(c.c, 'utf8'));
 
   for (var name in cfgData) {
-    var val = readCfgParam(name, cfgData[name]);
+    var val = cfgParams.read(name, cfgData[name]);
 
     if (val !== null) {
       c[name] = val;
