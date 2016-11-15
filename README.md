@@ -85,7 +85,7 @@ Where config.json contains:
 }
 ```
 ## Binary ISO-8583 service
-SocketQueue provides the service for the POS transactions, sent as ISO-8583 messages. Each valid ISO-8583 message, sent by client is sent to ISO host. Each ISO host response is sent back to the client as ISO 8583-message. To run ISO 8583 gateway on certain port, use the _--listenPort_ parameter.
+SocketQueue provides the service for the POS transactions, sent as ISO-8583 messages. Each valid ISO-8583 message, sent by client is sent to ISO host. Each ISO host response is sent back to the client as ISO-8583 message. To run ISO-8583 gateway on certain port, use the _--listenPort_ parameter.
 
 Each message consists of three parts: the MTI (Message Type Indicator), Binary Mask (lists the fields, being sent) and the fields values. You may find more detailed sytax description on Wiki page https://en.wikipedia.org/wiki/ISO_8583
 
