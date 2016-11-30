@@ -1,8 +1,8 @@
 # SocketQueue
-This is a free ISO-8583 gateway implementation for banking/fintech POS systems communication. The project is powered by Node.js (https://nodejs.org/).
+This is a free ISO 8583 gateway implementation for banking/fintech POS systems communication. The project is powered by Node.js (https://nodejs.org/).
 
 ## The Idea
-SocketQueue acts as a gateway between bank ISO-8583 system and customer applications/processes that want to communicate with them. It keeps one "host-to-host" connection with the bank processing to pass data, sent by multiple local clients. In terms of POS processing systems "host-to-host" connection means all the data is sent and received via single full-duplex socket asynchronously.
+SocketQueue acts as a gateway between bank ISO 8583 system and customer applications/processes that want to communicate with them. It keeps one "host-to-host" connection with the bank processing to pass data, sent by multiple local clients. In terms of POS processing systems "host-to-host" connection means all the data is sent and received via single full-duplex socket asynchronously.
 
 The recieved data is assigned to appropriate sender using the TID (Terminal Id) and STAN (System Trace Audit Number). If there are two clients sending payments transactions using the same TID, the second packet will be queued until the first one is processed or timed out. This is not normal/legal operation mode in terms of International Payments Systems, but some small fintech startups may have to accept it due to the greediness of some of the acquiring banks.
 
@@ -16,8 +16,8 @@ The recieved data is assigned to appropriate sender using the TID (Terminal Id) 
 * Connection manager
 * Human-friendly JSON interface to SmartVista / OpenWay processing systems (great for quick integration of mPOS solutions)
 * Host-to-Host on the left hand (one permanent TCP connection for everything), Host‑to‑POS (many TCP connections) on the right
-* Supports both binary ISO-8583 and JSON over HTTP operation modes at the same time
-* ISO-8583 validation, ISO-8583 values padding
+* Supports both binary ISO 8583 and JSON over HTTP operation modes at the same time
+* ISO 8583 validation, ISO 8583 values padding
 * Safe data/events logger (console, files, LogStash)
 * Message queue
 * TID queueing (wait for busy TID)
@@ -57,7 +57,7 @@ To get familiar with all the command line and configuration file parameters avai
 
     $ node socketQueue.js --help
 
-To establish the gateway to remote ISO host on 10.0.0.1:5000, that accepts binary ISO-8583 messages, run the module as following:  
+To establish the gateway to remote ISO host on 10.0.0.1:5000, that accepts binary ISO 8583 messages, run the module as following:  
 
     $ node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenPort=2014
     
@@ -84,13 +84,13 @@ Where config.json contains:
     "logFile":         "log.txt"
 }
 ```
-## Binary ISO-8583 service
-SocketQueue provides the service for the POS transactions, sent as ISO-8583 messages. Each valid ISO-8583 message, sent by client is sent to ISO host. Each ISO host response is sent back to the client as ISO-8583 message. To run ISO-8583 gateway on certain port, use the _--listenPort_ parameter.
+## Binary ISO 8583 service
+SocketQueue provides the service for the POS transactions, sent as ISO 8583 messages. Each valid ISO 8583 message, sent by client is sent to ISO host. Each ISO host response is sent back to the client as ISO 8583 message. To run ISO 8583 gateway on certain port, use the _--listenPort_ parameter.
 
 Each message consists of three parts: the MTI (Message Type Indicator), Binary Mask (lists the fields, being sent) and the fields values. You may find more detailed sytax description on Wiki page https://en.wikipedia.org/wiki/ISO_8583
 
 ## HTTP JSON Service
-SocketQueue understands the ISO-8583 transactions, sent as JSON arrays. Each valid message is converted to ISO-8583 string, values are padded where necessary. The message then goes to ISO host. The ISO host responses are converted back to JSON arrays and sent back to clients.
+SocketQueue understands the ISO 8583 transactions, sent as JSON arrays. Each valid message is converted to ISO 8583 string, values are padded where necessary. The message then goes to ISO host. The ISO host responses are converted back to JSON arrays and sent back to clients.
 
 To run the HTTP server use _--listenHttpPort_ option with the port number to listen on.
 
@@ -234,7 +234,7 @@ Or you can run only the echo server with so called "Socket Bank" onboard:
     $ node socketQueue.js --vv --echoServerPort=5000
 
 ## Collecting the Statistics
-The option _--statServerPort_ enables the statistics module and starts the stat server on given port number, that collects the following statistics of while SocketQueue accepts ISO-8583 transactions:
+The option _--statServerPort_ enables the statistics module and starts the stat server on given port number, that collects the following statistics of while SocketQueue accepts ISO 8583 transactions:
 
 Parameter | Meaning 
 --- | ---
@@ -287,7 +287,7 @@ SocketQueue treats just fine the TERM, INT and HUP signals. It gracefully quits 
 
 To force process termination at any time, give it a KILL signal.
 
-## ISO-8583 echo host
+## ISO 8583 echo host
 There is a public demo instance of SocketQueue running on the following address:
 * askarov.com:12345 - raw upstream
 * askarov.com:12346 - HTTP JSON upstream
