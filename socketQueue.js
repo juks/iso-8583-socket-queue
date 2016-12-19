@@ -81,7 +81,7 @@ if (c.helpJson) {
 }
 
 // Checking parameters
-if ((!c.upstreamHost && !c.testClients && !c.echoServerPort) || c.upstreamHost && (!c.upstreamPort || (!c.listenPort && !c.listenHttpPort))) {
+if ((!c.upstreamHost && !c.upstreamListenPort && !c.testClients && !c.echoServerPort) || c.upstreamHost && (!c.upstreamPort || (!c.listenPort && !c.listenHttpPort))) {
   console.log("Usage socketQueue.js [options]");
   console.log("Run socketQueue.js --help to see help");
 
@@ -182,8 +182,12 @@ dd('Important: starting...'.green);
 dd('Remote host configuration name: ' + c.hostConfig);
 
 // Start the upstream server
-if (c.upstreamHost) {
-  var upstreamServer = new socketServer.upstream(c);
+if (c.upstreamHost || c.upstreamListenPort) {
+  if (!c.upstreamListenPort) {
+    var upstreamServer = new socketServer.upstream(c);
+  } else {
+    var upstreamServer = new socketServer.upstreamListen(c);
+  }
 
   if (c.listenPort) {
     var serverSocket = new socketServer.clientSocket(upstreamServer, c).listen(c.listenPort);

@@ -4,6 +4,7 @@ exports.params = {
   openWay:                {sample: '',                    type: 'b', title: 'Follow OpenWay ISO8583 syntax',               replaced: 'system'},
   upstreamHost:           {sample: '<ip or host>',        type: 's', title: 'Host or ip address for the upstream server to connect to'},
   upstreamPort:           {sample: '<port number>',       type: 'n', title: 'Upstream server port to connect to'},
+  upstreamListenPort:     {sample: '<port number>',       type: 'n', title: 'Wait for the upstream server to connect to this port'},
   listenPort:             {sample: '<port number>',       type: 'n', title: 'Local server port'},
   listenHttpPort:         {sample: '<port number>',       type: 'n', title: 'Local http server port'},
   upstreamTimeout:        {sample: '<seconds>',           type: 'n', title: 'Upstream timeout. If there will be no data on the upstream socket for a given period of time the socket will be closed (default: no timeout)'},
