@@ -100,6 +100,17 @@ if ((!c.upstreamHost && !c.upstreamListenPort && !c.testClients && !c.echoServer
   process.exit(0);
 }
 
+// Overrides
+if (c.overrides) {
+  params = c.overrides.split(',');
+  global.overrides = {};
+
+  for (var i in params) {
+    var parts = params[i].split(':');
+    global.overrides[parts[0]] = {type: parts[1]};
+  }
+}
+
 // Setting up Winston debug
 if (c.v) c.debugLevel = 'info';
 if (c.vv) c.debugLevel = 'verbose';

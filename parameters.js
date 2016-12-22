@@ -1,7 +1,8 @@
 exports.params = {
   hostConfig:             {sample: '',                    type: 's', title: 'Sets remote syntax configuration. Available templates: smartVista (default), openWay. See iso8583/lib/packager', default: 'smartVista'},
-  smartVista:             {sample: '',                    type: 'b', title: 'Follow SmartVista ISO8583 syntax (default)',  replaced: 'system'},
-  openWay:                {sample: '',                    type: 'b', title: 'Follow OpenWay ISO8583 syntax',               replaced: 'system'},
+  smartVista:             {sample: '',                    type: 'b', title: 'Follow SmartVista ISO 8583 syntax (default)',  replaced: 'system'},
+  openWay:                {sample: '',                    type: 'b', title: 'Follow OpenWay ISO 8583 syntax',               replaced: 'system'},
+  overrides:              {sample: '1:fixed-b-hex,...',   type: 's', title: 'Overrides field specified with numbner with format of given name'},
   upstreamHost:           {sample: '<ip or host>',        type: 's', title: 'Host or ip address for the upstream server to connect to'},
   upstreamPort:           {sample: '<port number>',       type: 'n', title: 'Upstream server port to connect to'},
   upstreamListenPort:     {sample: '<port number>',       type: 'n', title: 'Wait for the upstream server to connect to this port'},
