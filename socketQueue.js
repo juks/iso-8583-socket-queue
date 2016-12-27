@@ -107,7 +107,9 @@ if (c.overrides) {
 
   for (var i in params) {
     var parts = params[i].split(':');
-    global.overrides[parts[0]] = {type: parts[1]};
+    var item = {type: parts[1]};
+    if (parts[2] !== 'undefined') item['length'] = parseInt(parts[2]);
+    global.overrides[parts[0]] = item;
   }
 }
 
