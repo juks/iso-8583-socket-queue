@@ -6,11 +6,11 @@ SocketQueue acts as a gateway between bank ISO 8583 system and customer applicat
 
 The recieved data is assigned to appropriate sender using the TID (Terminal Id) and STAN (System Trace Audit Number). If there are two clients sending payments transactions using the same TID, the second packet will be queued until the first one is processed or timed out. This is not normal/legal operation mode in terms of International Payments Systems, but some small fintech startups may have to accept it due to the greediness of some of the acquiring banks.
 
-                                  +-------------+
-                                  |             | <-------> POS HTTP client
-     [Bank POS ISO HOST] <------> | SocketQueue | <-------> POS binary client
-                                  |             | <-------> POS HTTP client
-                                  +-------------+
+                                        +-------------+
+                                        |             | <--HTTP JSON--> POS HTTP client
+     [Bank POS ISO HOST] <--ISO 8583--> | SocketQueue | <--ISO 8583---> POS binary client
+                                        |             | <--HTTP JSON--> POS HTTP client
+                                        +-------------+
                           
 ## Features
 * Connection manager;
