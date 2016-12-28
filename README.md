@@ -14,20 +14,20 @@ The recieved data is assigned to appropriate sender using the TID (Terminal Id) 
                           
 ## Features
 * Connection manager
-* Human-friendly JSON interface to SmartVista / OpenWay processing systems (great for quick integration of mPOS solutions)
-* Host-to-Host on the left hand (one permanent TCP connection for everything), Host‑to‑POS (many TCP connections) on the right
-* Supports both binary ISO 8583 and JSON over HTTP operation modes at the same time
-* ISO 8583 validation, ISO 8583 values padding
-* Safe data/events logger (console, files, LogStash)
-* Message queue
-* TID queueing (wait for busy TID)
-* Auto-reversal implementation
-* Socket Bank (emulates the ISO host)
-* Test clients (self test mode)
-* Stats Server (current transactions amount, MTI stats)
-* Solves the SmartVista weird transactions mishandling
-* Lighweight, PCI-DSS friendly, reliable, single thread, event based. Hundreds of concurrent connections/transactions at a time
-* Bonus: prevents remote ISO hosts crashes caused by PCI-DSS automated security scanning procedures
+* Human-friendly JSON interface to SmartVista / OpenWay processing systems (great for quick integration of mPOS solutions);
+* Host-to-Host on the left hand (one permanent TCP connection for everything), Host‑to‑POS (many TCP connections) on the right;
+* Supports both binary ISO 8583 and JSON over HTTP operation modes at the same time;
+* ISO 8583 validation, ISO 8583 values padding;
+* Safe data/events logger (console, files, LogStash);
+* Message queue;
+* TID queueing (wait for busy TID);
+* Auto-reversal implementation;
+* Socket Bank (emulates the ISO host);
+* Test clients (self test mode);
+* Stats Server (current transactions amount, MTI stats);
+* Solves the SmartVista weird transactions mishandling;
+* Lighweight, PCI-DSS friendly, reliable, event based. Hundreds of concurrent connections/transactions at a time;
+* Bonus: prevents remote ISO hosts crashes caused by PCI-DSS automated security scanning procedures.
  
 ## Installation
 * Clone the repository  
