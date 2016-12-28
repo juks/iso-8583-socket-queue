@@ -14,7 +14,7 @@ The recieved data is assigned to appropriate sender using the TID (Terminal Id) 
                           
 ## Features
 * Connection manager
-* Human-friendly JSON interface to SmartVista / OpenWay processing systems (great for quick integration of mPOS solutions);
+* Friendly JSON interface to processing hosts (great for quick integration of mPOS solutions);
 * Host-to-Host on the left hand (one permanent TCP connection), Host‑to‑POS (many TCP connections) on the right;
 * Supports both binary ISO 8583 and JSON over HTTP operation modes at the same time;
 * ISO 8583 validation, ISO 8583 values padding;
