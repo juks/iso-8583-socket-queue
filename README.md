@@ -2,7 +2,7 @@
 This is a free ISO 8583 gateway implementation for banking/fintech POS systems communication. The project is powered by Node.js (https://nodejs.org/).
 
 ## The Idea
-SocketQueue acts as a gateway between bank ISO 8583 system and customer applications/processes that want to communicate with them. It keeps one "host-to-host" connection with the bank processing to pass data, sent by multiple local clients. In terms of POS processing systems "host-to-host" connection means all the data is sent and received via single full-duplex socket asynchronously.
+SocketQueue acts as a gateway between bank ISO 8583 system and customer applications/processes that need to talk to it. The service keeps one "host-to-host" connection with the bank processing host, that used to transfer data, sent by multiple local clients. In terms of POS processing systems "host-to-host" connection means all the data is sent and received via single full-duplex socket asynchronously.
 
 The recieved data is assigned to appropriate sender using the TID (Terminal Id) and STAN (System Trace Audit Number). If there are two clients sending payments transactions using the same TID, the second packet will be queued until the first one is processed or timed out. This is not normal/legal operation mode in terms of International Payments Systems, but some small fintech startups may have to accept it due to the greediness of some of the acquiring banks.
 
