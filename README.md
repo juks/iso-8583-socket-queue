@@ -14,7 +14,7 @@ The recieved data is assigned to appropriate sender using the TID (Terminal Id) 
                           
 ## Features
 * Connection manager;
-* Friendly JSON interface to processing hosts (great for quick integration of mPOS solutions);
+* Modern and friendly JSON interface to aged or unfriendly ISO 8583 processing hosts;
 * Host-to-Host on the left hand (one permanent TCP connection), Host‑to‑POS (many TCP connections) on the right;
 * Supports both binary ISO 8583 and JSON over HTTP operation modes at the same time;
 * ISO 8583 validation, ISO 8583 values padding;
