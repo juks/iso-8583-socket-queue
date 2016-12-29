@@ -9,7 +9,7 @@ The recieved data is assigned to appropriate sender using the TID (Terminal Id) 
 <pre>
                                         +----------------+
                                         |                | <--JSON 8583--> POS HTTP client
-     [Bank POS ISO HOST] <--ISO 8583--> |  SocketQueue<img src="https://cloud.githubusercontent.com/assets/147685/21545760/260c1468-cdeb-11e6-97cb-8016a96b6d65.gif" align="absmiddle">  | <--ISO 8583---> POS binary client
+     [Bank POS ISO HOST] <--ISO 8583--> |  SocketQueue <img src="https://cloud.githubusercontent.com/assets/147685/21545760/260c1468-cdeb-11e6-97cb-8016a96b6d65.gif" align="absmiddle"> | <--ISO 8583---> POS binary client
                                         |                | <--HTTP HEX---> POS HTTP client
                                         +----------------+
 </pre>
