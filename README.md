@@ -33,6 +33,8 @@ The recieved data is assigned to appropriate sender using the TID (Terminal Id) 
 * Bonus: prevents remote ISO hosts crashes caused by PCI-DSS automated security scanning procedures.
  
 ## Installation
+* In case you do not have node.js installed, get one at https://nodejs.org/
+
 * Clone the repository  
     _git clone https://github.com/juks/SocketQueue_
 
