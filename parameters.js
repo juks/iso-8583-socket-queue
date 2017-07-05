@@ -31,6 +31,7 @@ exports.params = {
   vv:                     {sample: '',                    type: 'b', title: 'Sets logging level to verbose'},
   dangerous:              {sample: '',                    type: 'b', title: 'Disable the masking of private data'},
   useLengthHeader:        {sample: '',                    type: 'b', title: 'Disable or enable iso8583 length header (currently supported only for upstream communication)', default: true},
+  lengthHeaderType:       {sample: '',                    type: 's', title: 'Length header type (numeric/hex)', default: 'numeric'},
   useStaticHeader:        {sample: '',                    type: 'h', title: 'Specify iso8583 static string header (will be prepended to length header if length header is enabled). Default format is hex, use "string:" prefix for string input (eg. useStaticHeader=string:iso8583)', default: ""},
   silent:                 {sample: '',                    type: 'b', title: 'Stay silent'},
   help:                   {sample: '',                    type: 'b', title: 'Display help screen'},
