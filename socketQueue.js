@@ -57,7 +57,7 @@ if (c.c) {
 // Applying defaults
 for (var name in validParams) {
   if (validParams[name]['default'] && !c.hasOwnProperty(name)) {
-    c[name] = validParams[name]['default'];
+    c[name] = cfgParams.read(name, validParams[name]['default']);
     defaults[name] = true;
   }
 }
