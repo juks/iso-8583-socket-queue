@@ -314,4 +314,4 @@ Please report bugs in the Github issue tracker: https://github.com/juks/SocketQu
 PayPal donation page is available at https://paypal.me/igoraskarov.
 
 ## Copyright
-Copyright (c) 2015–2017 Igor Askarov (juks@juks.ru). See Licence file for details.
+Copyright (c) 2015–2018 Igor Askarov (juks@juks.ru). See Licence file for details.
