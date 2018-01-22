@@ -11,6 +11,7 @@ exports.params = {
   upstreamTimeout:        {sample: '<seconds>',           type: 'n',    title: 'Upstream timeout. If there will be no data on the upstream socket for a given period of time the socket will be closed (default: no timeout)'},
   clientTimeout:          {sample: '<seconds>',           type: 'n',    title: 'Client socket timeout (default: no timeout)'},
   maxQueue:               {sample: '<message count>',     type: 'n',    title: 'Maximum messages in queue (default: 100)',                                   default: 100},
+  queueLockTerminal:      {sample: '',                    type: 'b',    title: 'Queue subsequent messages with the same TID until it gets released',         default: true},
   queueTimeout:           {sample: '<seconds>',           type: 'n',    title: 'Queue message timeout (default: 35 seconds)',                                default: 35},
   queueShortTimeout:      {sample: '<seconds>',           type: 'n',    title: 'Queue message short timeout (for system messages, default: 5 seconds)',      default: 5},
   queueMessageKeyFields:  {sample: '<fields list>',       type: 'csn',  title: 'The fields used to identify the source clients by the messages in the message queue',        default: '11,41'},
