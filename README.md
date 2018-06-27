@@ -310,8 +310,5 @@ $ curl -H "Content-Type: application/json" -X POST -d '{ "0": "800", "3": "0", "
 ## Reporting Bugs
 Please report bugs in the Github issue tracker: https://github.com/juks/SocketQueue/issues
 
-## Supporting the author
-PayPal donation page is available at https://paypal.me/igoraskarov.
-
 ## Copyright
 Copyright (c) 2015–2018 Igor Askarov (juks@juks.ru). See Licence file for details.
