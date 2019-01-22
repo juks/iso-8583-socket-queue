@@ -95,7 +95,7 @@ SocketQueue provides the service for the POS transactions, sent as ISO 8583 mess
 Each message consists of three parts: the MTI (Message Type Indicator), Binary Mask (lists the fields, being sent) and the fields values. You may find more detailed sytax description on Wiki page https://en.wikipedia.org/wiki/ISO_8583
 
 ## HTTP JSON Service
-SocketQueue understands the ISO 8583 transactions, sent as JSON arrays. Each valid message is converted to ISO 8583 string, values are padded where necessary. The message then goes to ISO host. The ISO host responses are converted back to JSON arrays and sent back to clients.
+SocketQueue understands the ISO 8583 transactions, sent as JSON object. Each valid message is converted to ISO 8583 string, values are padded where necessary. The message then goes to ISO host. The ISO host responses are converted back to JSON object and sent back to clients.
 
 To run the HTTP server use _--listenHttpPort_ option with the port number to listen on.
 
@@ -112,25 +112,25 @@ In case of success you will get the following resonse
 ```json
 {
    "result":{
-      "0":"0210",
-      "1":"723005802ec08200",
-      "2":"4850780000478123",
-      "3":0,
-      "4":1000,
-      "7":"0820130546",
-      "11":"618160",
-      "12":"150820130600",
-      "22":"056",
-      "24":200,
-      "25":0,
-      "35":"4850781234567891=19082012232800000037",
-      "37":"708981921851",
-      "38":"VaHYUU",
-      "39":0,
-      "41":"00992468",
-      "42":"000124642124643",
-      "49":643,
-      "55":"9f2608571f1e10d4fa4aac9f2701809f100706010a03a4b8029f37045bb074729f3602000c950500800010009a031508189c01009f02060000000010005f2a02064382023c009f1a0206439f03060000000000009f3303e0f0c89f34034403029f3501229f1e0835313230323831358407a00000000310109f41030000565f340101"
+      "0": "0210",
+      "1": "723005802ec08200",
+      "2": "4850780000478123",
+      "3": 0,
+      "4": 1000,
+      "7": "0820130546",
+      "11": "618160",
+      "12": "150820130600",
+      "22": "056",
+      "24": 200,
+      "25": 0,
+      "35": "4850781234567891=19082012232800000037",
+      "37": "708981921851",
+      "38": "VaHYUU",
+      "39": 0,
+      "41": "00992468",
+      "42": "000124642124643",
+      "49": 643,
+      "55": "9f2608571f1e10d4fa4aac9f2701809f100706010a03a4b8029f37045bb074729f3602000c950500800010009a031508189c01009f02060000000010005f2a02064382023c009f1a0206439f03060000000000009f3303e0f0c89f34034403029f3501229f1e0835313230323831358407a00000000310109f41030000565f340101"
    },
    "errors":[]
 }
@@ -259,21 +259,21 @@ So, if stats server is running on port 4000, _telnet 4000_ will give json stats,
    "refundAmount":0,
    "reversalAmount":3460,
    "faultStat":{
-      "5":2,
-      "100":7,
-      "103":1,
-      "116":3,
-      "117":1,
-      "120":10
+      "5": 2,
+      "100": 7,
+      "103": 1,
+      "116": 3,
+      "117": 1,
+      "120": 10
    },
    "packetCount":{
-      "total":2265,
-      "0800":730,
-      "0810":724,
-      "0200":367,
-      "0210":364,
-      "0400":48,
-      "0410":32
+      "total": 2265,
+      "0800": 730,
+      "0810": 724,
+      "0200": 367,
+      "0210": 364,
+      "0400": 48,
+      "0410": 32
    }
 }
 ```
