@@ -113,6 +113,20 @@ if (c.overrides) {
   }
 }
 
+// Header format
+if (c.headerFormat) {
+  params = c.headerFormat.split(',');
+  global.headerFormat = [];
+
+  for (var i in params) {
+    var parts = params[i].split(':');
+    var item = {name: parts[0], type: parts[1], length: parseInt(parts[2])};
+    if (parts[3] !== 'undefined') item['default'] = parts[3];
+
+    global.headerFormat.push(item);
+  }
+}
+
 // Setting up Winston debug
 if (c.v) c.debugLevel = 'info';
 if (c.vv) c.debugLevel = 'verbose';

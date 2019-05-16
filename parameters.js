@@ -32,7 +32,8 @@ exports.params = {
   v:                      {sample: '',                    type: 'b',    title: 'Sets logging level to warn'},
   vv:                     {sample: '',                    type: 'b',    title: 'Sets logging level to verbose'},
   dangerous:              {sample: '',                    type: 'b',    title: 'Disable the masking of private data'},
-  useHeader:              {sample: '',                    type: 'b',    title: 'Disable or enable iso8583 length header (currently supported only for upstream communication)', default: true},
+  useHeader:              {sample: '',                    type: 'b',    title: 'Disable or enable iso8583 header (currently supported only for upstream communication)', default: true},
+  headerFormat:           {sample: '',                    type: 's',    title: 'iso8583 header format', default: 'length:fixed-n:4'},
   silent:                 {sample: '',                    type: 'b',    title: 'Stay silent'},
   help:                   {sample: '',                    type: 'b',    title: 'Display help screen'},
   helpJson:               {sample: '',                    type: 'b',    title: 'Display help screen in json mode'}
