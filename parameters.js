@@ -34,6 +34,7 @@ exports.params = {
   dangerous:              {sample: '',                    type: 'b',    title: 'Disable the masking of private data'},
   useHeader:              {sample: '',                    type: 'b',    title: 'Disable or enable iso8583 header (currently supported only for upstream communication)', default: true},
   headerFormat:           {sample: '',                    type: 's',    title: 'iso8583 header format (every header field is comma separated and defined as <name:type:length:default>)', default: 'length:fixed-n:4'},
+  lengthIncludeHeader:    {sample: '',                    type: 'b',    title: 'Whether or not length header value should include the header length itself', default: false},
   silent:                 {sample: '',                    type: 'b',    title: 'Stay silent'},
   help:                   {sample: '',                    type: 'b',    title: 'Display help screen'},
   helpJson:               {sample: '',                    type: 'b',    title: 'Display help screen in json mode'}
