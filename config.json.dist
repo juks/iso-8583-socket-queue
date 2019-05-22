@@ -25,8 +25,7 @@
 	"v": false,
 	"vv": false,
 	"dangerous": false,
-	"useLengthHeader": true,
-	"useStaticHeader": '',
+	"useHeader": true,
 	"silent": false,
 	"help": false,
 	"helpJson": false

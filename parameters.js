@@ -32,10 +32,9 @@ exports.params = {
   v:                      {sample: '',                    type: 'b',    title: 'Sets logging level to warn'},
   vv:                     {sample: '',                    type: 'b',    title: 'Sets logging level to verbose'},
   dangerous:              {sample: '',                    type: 'b',    title: 'Disable the masking of private data'},
-  useLengthHeader:        {sample: '',                    type: 'b',    title: 'Disable or enable iso8583 length header (currently supported only for upstream communication)', default: true},
-  lengthHeaderType:       {sample: '',                    type: 's',    title: 'Length header type (numeric/hex)', default: 'numeric'},
-  useStaticHeader:        {sample: '',                    type: 'h',    title: 'Specify iso8583 static string header (will be prepended to length header if length header is enabled). Default format is hex, use "string:" prefix for string input (eg. useStaticHeader=string:iso8583)', default: ""},
-  lengthHeaderFirst:      {sample: '',                    type: 'b',    title: 'Length header goes first', default: false},
+  useHeader:              {sample: '',                    type: 'b',    title: 'Disable or enable iso8583 header (currently supported only for upstream communication)', default: true},
+  headerFormat:           {sample: '',                    type: 's',    title: 'iso8583 header format (every header field is comma separated and defined as <name:type:length:default>)', default: 'length:fixed-n:4'},
+  lengthIncludeHeader:    {sample: '',                    type: 'b',    title: 'Whether or not length header value should include the header length itself', default: false},
   silent:                 {sample: '',                    type: 'b',    title: 'Stay silent'},
   help:                   {sample: '',                    type: 'b',    title: 'Display help screen'},
   helpJson:               {sample: '',                    type: 'b',    title: 'Display help screen in json mode'}
