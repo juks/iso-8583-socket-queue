@@ -1,0 +1,8 @@
+{
+    "upstreamHost":    "echo-server",
+    "upstreamPort":    5000,
+    "listenPort":      2014,
+    "vv":              true,
+    "logFile":         "log.txt"
+}
+

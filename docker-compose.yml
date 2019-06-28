@@ -1,0 +1,19 @@
+version: '3'
+services:
+  socket-queue:
+    build: .
+    ports:
+      - "2014:2014"
+    command: -c /etc/socket-queue/config.json
+    volumes:
+      - ./sample-config.json:/etc/socket-queue/config.json
+
+  echo-server:
+    build: .
+    ports:
+      - "5000:5000"
+    command: --vv --echoServerPort=5000
+
+  test-client:
+    build: .
+    command: --testTargetHost=socket-queue --testTargetPort=2014 --testClients=10 --vv
