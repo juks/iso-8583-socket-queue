@@ -101,13 +101,13 @@ To run the HTTP server use _--listenHttpPort_ option with the port number to lis
 
     $ node socketQueue.js --upstreamHost=10.0.0.1 --upstreamPort=5000 --listenHttpPort=8080 --vv --logFile=log.txt
 
-When it is runnig on port 8080, you can test it like this with the "purchase" EMV transcation data:
+When it is running on port 8080, you can test it like this with the "purchase" EMV transcation data:
 
 ```bash
 $ curl -H "Content-Type: application/json" -X POST -d '{ "0": "0200",  "3": "0",  "4": 1000,  "7": "0818160933",  "11": 618160,  "12": "150820130600",  "22": "056",  "24": "200",  "25": "00",  "35": "4850781234567891=19082012232800000037",  "41": 992468,  "42": 124642124643,  "49": "810",  "55": "9f2608571f1e10d4fa4aac9f2701809f100706010a03a4b8029f37045bb074729f3602000c950500800010009a031508189c01009f02060000000010005f2a02064382023c009f1a0206439f03060000000000009f3303e0f0c89f34034403029f3501229f1e0835313230323831358407a00000000310109f41030000565f340101" }' http://localhost:8080
 ```
 
-In case of success you will get the following resonse
+In case of success you will get the following response
 
 ```json
 {
@@ -216,7 +216,7 @@ Here goes an example for the following message:
 08002220010000800000990000083020354500000183100000001
 ```
 
-That can get trasmitted over HTTP as:
+That can get transmitted over HTTP as:
 ```bash
 $ curl -H "Content-Type: text/plain" -X POST -d '303830302220010000c00000303030303030303630373136313730303132333435363030303030313233343536313233353637383930313234353637' http://localhost:8080/raw
 ```
@@ -305,6 +305,46 @@ $ cat ./sample_payloads/sv_800_echo.txt - | nc askarov.com 12345
 For HTTP JSON:
 ```bash
 $ curl -H "Content-Type: application/json" -X POST -d '{ "0": "800", "3": "0", "7": "0607161700", "11": "123456", "24": "0", "41": "00123456", "42": "123567890124567" }' http://askarov.com:12346
+```
+
+## Running on Docker
+
+#### Config 
+
+Create a dummy config like so
+
+```bash
+echo '{
+    "upstreamHost":    "10.0.0.1",
+    "upstreamPort":    5000,
+    "listenPort":      2014,
+    "vv":              true,
+    "logFile":         "log.txt"
+}
+' > sample-config.json
+```
+
+#### Build image 
+```bash
+docker build -t socket-queue:latest .
+```
+
+#### Run it
+
+```bash
+docker run -v `pwd`/sample-config.json:/etc/socket-queue/config.json -t socket-queue:latest -c /etc/socket-queue/config.json
+```
+
+#### Docker Compose
+
+This will create a docker container and run it in three different configurations:
+
+1. SocketQueue Server listening on 2014
+2. SocketQueue Echo Server listening on port 5000
+3. SocketQueue Test Client emulating 10 clients
+
+```bash
+docker-compose up
 ```
 
 ## Reporting Bugs
