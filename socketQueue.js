@@ -241,8 +241,7 @@ if (c.echoServerPort || c.testClients) var testSuite = require('./lib/testSuite'
 if (c.echoServerPort) {
   // Run local echo server
   var echoServer = new testSuite.echoServer(c, dd).listen(c.echoServerPort);
-
-  dd("Echo server is now running on port " + c.echoServerPort + "\n");
+  dd("Echo server is now running on port " + c.echoServerPort);
 }
 
 // Run local clients
