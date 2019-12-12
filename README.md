@@ -35,10 +35,10 @@ The recieved data is assigned to appropriate sender using the TID (Terminal Id) 
 ## Installation (works both for Linux and Windows)
 * In case you do not have node.js installed, follow the installation instructions at https://nodejs.org/en/download/
 
-* Install git client and clone the repository
+* Install git client and clone the repository:  
     _git clone https://github.com/juks/iso-8583-socket-queue_
 
-* Install extra modules  
+* Install extra modules:  
     _cd iso-8583-socket-queue_  
     _npm install_
 
