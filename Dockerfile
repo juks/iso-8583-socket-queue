@@ -1,5 +1,5 @@
 # https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
-FROM node:8
+FROM node:14
 
 WORKDIR /app/
 
