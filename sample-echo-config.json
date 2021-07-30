@@ -1,0 +1,7 @@
+{
+    "echoServerPort": 5000,
+    "testTargetHost": "localhost",
+    "testTargetPort": 5001,
+    "vv": true,
+    "logFile": "log_echo_server.txt"
+}

@@ -2,6 +2,7 @@ var socketServer    = require('./lib/socketServer');
 var helpers         = require('./lib/helpers');
 var argv            = require('optimist').argv;
 var cfgParams       = require('./lib/cfgParams');
+var axios           = require('axios').default;
 var winston         = require('winston');
                       require('winston-logstash');
 var fs              = require('fs');
@@ -213,6 +214,7 @@ if (c.upstreamHost || c.upstreamListenPort) {
   if (!c.upstreamListenPort) {
     var upstreamServer = new socketServer.upstream(c);
   } else {
+    axios.defaults.headers.common['Authorization'] = `Bearer ${process.env.DOWNSTREAM_BEARER_TOKEN}`
     var upstreamServer = new socketServer.upstreamListen(c);
   }
 
@@ -240,8 +242,13 @@ if (c.echoServerPort || c.testClients) var testSuite = require('./lib/testSuite'
 // Start test server and perform tests
 if (c.echoServerPort) {
   // Run local echo server
-  var echoServer = new testSuite.echoServer(c, dd).listen(c.echoServerPort);
+  var echoServer = new testSuite.echoServer(c, dd)
+  echoServer.listen(c.echoServerPort);
   dd("Echo server is now running on port " + c.echoServerPort);
+
+  if (c.testTargetPort && c.testTargetPort) {
+    var inboundRequestTesters = new testSuite.inboundRequestTesters(c)
+  }
 }
 
 // Run local clients

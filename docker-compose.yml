@@ -5,6 +5,7 @@ services:
     image: &img socket-queue
     ports:
       - "8080:8080"
+      - "5001:5001"
     command: -c /etc/socket-queue/config.json
     volumes:
       - ./sample-config.json:/etc/socket-queue/config.json
@@ -15,8 +16,10 @@ services:
     image: *img
     ports:
       - "5000:5000"
-    command: --vv --echoServerPort=5000
+
+    command: -c /etc/socket-queue/config.json
     volumes:
+      - ./sample-echo-config.json:/etc/socket-queue/config.json
       - $PWD:/app
 
   test-client:

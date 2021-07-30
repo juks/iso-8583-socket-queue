@@ -1,6 +1,7 @@
 .idea
 log.txt
 log1.txt
+log_echo_server.txt
 socketQueue.pid
 config.json
 stats.json
