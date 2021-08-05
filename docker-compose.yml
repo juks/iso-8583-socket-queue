@@ -2,18 +2,29 @@ version: '3'
 services:
   socket-queue:
     build: .
+    image: &img socket-queue
     ports:
-      - "2014:2014"
+      - "8080:8080"
+      - "5001:5001"
     command: -c /etc/socket-queue/config.json
     volumes:
       - ./sample-config.json:/etc/socket-queue/config.json
+      - $PWD:/app
 
   echo-server:
     build: .
+    image: *img
     ports:
       - "5000:5000"
-    command: --vv --echoServerPort=5000
+
+    command: -c /etc/socket-queue/config.json
+    volumes:
+      - ./sample-echo-config.json:/etc/socket-queue/config.json
+      - $PWD:/app
 
   test-client:
     build: .
-    command: --testTargetHost=socket-queue --testTargetPort=2014 --testClients=10 --vv
+    image: *img
+    command: --testTargetHost=socket-queue --testTargetPort=8080 --testClients=10 --vv --testRealLife
+    volumes:
+      - $PWD:/app

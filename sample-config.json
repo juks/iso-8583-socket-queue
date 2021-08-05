@@ -1,8 +1,9 @@
 {
-    "upstreamHost":    "echo-server",
-    "upstreamPort":    5000,
-    "listenPort":      2014,
-    "vv":              true,
-    "logFile":         "log.txt"
+    "upstreamHost":         "echo-server",
+    "upstreamPort":         5000,
+    "upstreamListenPort":   5001,
+    "listenPort":           8080,
+    "downstreamWebhookURL": "http://localhost:8000/iso_server/",
+    "vv":                   true,
+    "logFile":              "log.txt"
 }
-
