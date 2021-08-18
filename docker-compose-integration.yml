@@ -1,0 +1,21 @@
+version: '3'
+services:
+  socket-queue:
+    build: .
+    image: &img socket-queue
+    ports:
+      - "8080:8080"
+      - "5001:5001"
+    command: -c /etc/socket-queue/config.json
+    volumes:
+      - ./integration-queue-config.json:/etc/socket-queue/config.json
+
+  echo-server:
+    build: .
+    image: *img
+    ports:
+      - "5000:5000"
+
+    command: -c /etc/socket-queue/config.json
+    volumes:
+      - ./integration-echo-config.json:/etc/socket-queue/config.json
