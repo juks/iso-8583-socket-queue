@@ -1,0 +1,12 @@
+{
+    "upstreamHost":         "echo-server",
+    "upstreamPort":         5000,
+    "listenPort":           8081,
+    "listenHttpPort":       8080,
+    "downstreamWebhookURL": "http://localhost:8000/iso_server/",
+    "vv":                   true,
+    "logFile":              "log.txt",
+    "fis":                  true,
+    "useHeader": false,
+    "queueMessageKeyFields" : "11"
+}

@@ -1,0 +1,8 @@
+{
+    "echoServerPort": 5000,
+    "vv": true,
+    "logFile": "log_echo_server.txt",
+    "fis": true,
+    "useHeader": false,
+    "queueMessageKeyFields" : "11"
+}
