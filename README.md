@@ -353,4 +353,4 @@ Feel free to send your inquiries about commercial collaboration (such as payment
 Please report bugs in the Github issue tracker: https://github.com/juks/SocketQueue/issues
 
 ## Copyright
-Copyright (c) 2015–2020 Igor Askarov (juks@juks.ru). See License file for details.
+Copyright (c) 2015–2023 Igor Askarov (juks@juks.ru). See License file for details.
