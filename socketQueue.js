@@ -211,9 +211,9 @@ dd('Remote host configuration name: ' + c.hostConfig);
 // Start the upstream server
 if (c.upstreamHost || c.upstreamListenPort) {
   if (!c.upstreamListenPort) {
-    var upstreamServer = new socketServer.upstream(c);
+    var upstreamServer = new socketServer.isoHostClient(c);
   } else {
-    var upstreamServer = new socketServer.upstreamListen(c);
+    var upstreamServer = new socketServer.isoHostServer(c);
   }
 
   if (c.listenPort) {
