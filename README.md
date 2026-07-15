@@ -15,7 +15,6 @@ Free ISO 8583 gateway (bridge) for banking and fintech POS communication. Powere
 - [Collecting the Statistics](#collecting-the-statistics)
 - [Compatibility](#compatibility)
 - [Signals](#signals)
-- [Demo Instance](#demo-instance)
 - [Running on Docker](#running-on-docker)
 - [Commercial Collaboration](#commercial-collaboration)
 - [Reporting Bugs](#reporting-bugs)
@@ -354,30 +353,9 @@ SocketQueue handles TERM, INT, and HUP signals correctly. It gracefully quits on
 
 To force termination at any time, send a KILL signal.
 
-## Demo Instance
-
-> **Note:** Availability of the public demo is not guaranteed.
-
-A public demo instance may be available at:
-
-* `askarov.com:12345` — raw upstream
-* `askarov.com:12346` — HTTP JSON upstream
-
-Raw mode:
-
-```bash
-cat ./sample_payloads/sv_800_echo.txt | nc askarov.com 12345
-```
-
-HTTP JSON:
-
-```bash
-curl -H "Content-Type: application/json" -X POST -d '{ "0": "800", "3": "0", "7": "0607161700", "11": "123456", "24": "0", "41": "00123456", "42": "123567890124567" }' http://askarov.com:12346
-```
-
 ## Running on Docker
 
-> **Note:** The Docker image uses Node.js 8 (legacy). For production, prefer running directly on Node.js 20 LTS.
+The Docker image uses Node.js 20 LTS.
 
 ### Config
 

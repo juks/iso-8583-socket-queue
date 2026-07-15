@@ -1,5 +1,5 @@
 # https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
-FROM node:8
+FROM node:20-bookworm
 
 WORKDIR /app/
 
@@ -9,6 +9,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 2014
+EXPOSE 2014 5000
 
 ENTRYPOINT ["node", "socketQueue.js"]
