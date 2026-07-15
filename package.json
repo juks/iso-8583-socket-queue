@@ -6,13 +6,13 @@
   "dependencies": {
     "colors": "^1.0.3",
     "moment": "^2.9.0",
-    "optimist": "^0.6.1",
+    "minimist": "^1.2.8",
     "winston": "^1.0.1",
     "winston-logstash": "^0.4.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/smoke.js"
   },
   "repository": {
     "type": "git",

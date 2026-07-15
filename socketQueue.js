@@ -1,6 +1,6 @@
 var socketServer    = require('./lib/socketServer');
 var helpers         = require('./lib/helpers');
-var argv            = require('optimist').argv;
+var argv            = require('minimist')(process.argv.slice(2));
 var cfgParams       = require('./lib/cfgParams');
 var winston         = require('winston');
                       require('winston-logstash');
@@ -29,7 +29,7 @@ for (var name in argv) {
     c[name] = val;
   } else {
     console.log("Configuration error: invalid parameter " + name + ". See node socketQueue.js --help to see available parameters\n");
-    process.exit(0);
+    process.exit(1);
   }
 }
 
@@ -37,7 +37,7 @@ for (var name in argv) {
 if (c.c) {
   if (!fs.existsSync(c.c)) {
     console.log("Configuration file " + c.c + " does not exist!");
-    process.exit(0);
+    process.exit(1);
   }
 
   var cfgData = JSON.parse(fs.readFileSync(c.c, 'utf8'));
@@ -49,7 +49,7 @@ if (c.c) {
       c[name] = val;
     } else {
       console.log("Configuration file: invalid parameter " + name + ". See node socketQueue.js --help to see available parameters\n");
-      process.exit(0);
+      process.exit(1);
     }
   }
 }
@@ -85,19 +85,19 @@ if ((!c.upstreamHost && !c.upstreamListenPort && !c.testClients && !c.echoServer
   console.log("Usage socketQueue.js [options]");
   console.log("Run socketQueue.js --help to see help");
 
-  process.exit(0);
+  process.exit(1);
 } else if (c.testClients && !c.testTargetHost) {
   console.log("No test target host specified. Aborting");
 
-  process.exit(0);
+  process.exit(1);
 } else if (c.testClients && !c.testTargetPort) {
   console.log("No test target port specified. Aborting");
 
-  process.exit(0);
+  process.exit(1);
 } else if (c.logstashHost && !c.logstashPort) {
   console.log("No Logstash port specified. Aborting");
 
-  process.exit(0);
+  process.exit(1);
 }
 
 // Overrides
@@ -276,7 +276,7 @@ process.on('SIGTERM', function() {
 process.on('SIGHUP', function() {
    dd('Warning: got SIGHUP.');
 
-  if (upstreamServer.statServer) upstreamServer.statServer.reset();
+  if (upstreamServer && upstreamServer.statServer) upstreamServer.statServer.reset();
   if (fileTransport) helpers.winstonRotate(fileTransport);
 });
 
